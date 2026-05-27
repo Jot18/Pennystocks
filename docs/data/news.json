@@ -1,5 +1,5 @@
 {
-  "updated": "2026-05-27T18:53:01.395263+00:00",
+  "updated": "2026-05-27T19:19:00.672718+00:00",
   "count": 75,
   "items": [
     {
@@ -484,15 +484,6 @@
       "matched_keywords": []
     },
     {
-      "symbol": "OPK",
-      "title": "OPKO Health's ModeX Therapeutics Will Present Data Demonstrating In Vivo CAR-T Cell Generation and Deep B-Cell Depletion in Preclinical Studies",
-      "url": "/news/353359/opko-healths-modex-therapeutics-will-present-data-demonstrating-in-vivo-car-t-cell-generation-and-deep-b-cell-depletion-in-preclinical-studies",
-      "source": "Finviz",
-      "published": "2026-05-12T08:00:00Z",
-      "sentiment": "neutral",
-      "matched_keywords": []
-    },
-    {
       "symbol": "CRON",
       "title": "Cronos Group Inc (CRON) Q1 2026 Earnings Call Highlights: Record Revenue and Strategic Growth ...",
       "url": "https://finance.yahoo.com/markets/stocks/articles/cronos-group-inc-cron-q1-070312197.html",
@@ -606,19 +597,28 @@
     },
     {
       "symbol": "OPK",
-      "title": "OPKO Health Expands Nicoya Agreement to Support RAYALDEE Commercialization in Greater China",
-      "url": "/news/349341/opko-health-expands-nicoya-agreement-to-support-rayaldee-commercialization-in-greater-china",
-      "source": "Finviz",
-      "published": "2026-04-30T08:30:00Z",
+      "title": "OPKO Health Q1 Earnings In-Line on Product Gains, Revenues Down Y/Y",
+      "url": "https://finance.yahoo.com/sectors/healthcare/articles/opko-health-q1-earnings-line-165800116.html",
+      "source": "Zacks",
+      "published": "2026-04-29T16:58:00Z",
       "sentiment": "neutral",
       "matched_keywords": []
     },
     {
       "symbol": "OPK",
-      "title": "BioReference Launches BioReference Direct, Expanding Access to Consumer-Initiated Diagnostic Testing Through a Fully Integrated Digital Platform",
-      "url": "/news/349290/bioreference-launches-bioreference-direct-expanding-access-to-consumer-initiated-diagnostic-testing-through-a-fully-integrated-digital-platform",
-      "source": "Finviz",
-      "published": "2026-04-30T08:00:00Z",
+      "title": "OPKO Health Inc (OPK) Q1 2026 Earnings Call Highlights: Navigating Challenges and Seizing ...",
+      "url": "https://finance.yahoo.com/sectors/healthcare/articles/opko-health-inc-opk-q1-070936969.html",
+      "source": "GuruFocus.com",
+      "published": "2026-04-29T07:09:36Z",
+      "sentiment": "neutral",
+      "matched_keywords": []
+    },
+    {
+      "symbol": "OPK",
+      "title": "OPKO Health Q1 Earnings Call Highlights",
+      "url": "https://www.marketbeat.com/instant-alerts/opko-health-q1-earnings-call-highlights-2026-04-28/?utm_source=yahoofinance&utm_medium=yahoofinance",
+      "source": "MarketBeat",
+      "published": "2026-04-28T23:39:07Z",
       "sentiment": "neutral",
       "matched_keywords": []
     },
