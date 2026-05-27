@@ -342,7 +342,8 @@ def get_news_for(symbol, limit=5):
 # ---------- Pre-market gappers from Finviz ----------
 
 def fetch_finviz_gainers():
-    """Scrape Finviz top gainers (covers pre-market when run before open)."""
+    """Scrape Finviz top gainers (covers pre-market when run before open).
+    Returns up to 50 movers; many will be OTC and filtered out downstream."""
     try:
         url = "https://finviz.com/screener.ashx?v=111&s=ta_topgainers"
         r = requests.get(url, headers={"User-Agent": "Mozilla/5.0"}, timeout=10)
@@ -351,7 +352,7 @@ def fetch_finviz_gainers():
         soup = BeautifulSoup(r.text, "html.parser")
         rows = soup.select("tr[valign='top']")
         out = []
-        for row in rows[:30]:
+        for row in rows[:50]:
             cells = row.find_all("td")
             if len(cells) < 11:
                 continue
@@ -420,25 +421,60 @@ def main():
                 premarket_results.append(r)
     premarket_results.sort(key=lambda x: abs(x["gap_pct"]), reverse=True)
 
-    # Finviz top gainers - filter to only our known Robinhood-tradable universe
-    # (avoid per-ticker API calls that trigger rate limits)
+    # Finviz top gainers - verify each via yfinance and keep ONLY Robinhood-tradable ones
     raw_finviz = fetch_finviz_gainers()
     universe_set = set(UNIVERSE)
     finviz_movers = []
-    for mover in raw_finviz:
+
+    def verify_finviz_ticker(mover):
+        """Check if a Finviz mover is Robinhood-tradable via exchange lookup."""
         sym = mover.get("symbol")
         if not sym:
-            continue
+            return None
+        # Fast path: if it's in our pre-vetted universe, accept immediately
         if sym in universe_set:
             mover["exchange"] = "RH"
             mover["robinhood_tradable"] = True
-        else:
-            # Unknown ticker - show with caveat (could be RH-tradable, could be OTC)
-            mover["exchange"] = "?"
-            mover["robinhood_tradable"] = None
-        finviz_movers.append(mover)
+            return mover
+        # Otherwise check exchange via yfinance
+        try:
+            t = yf.Ticker(sym)
+            exch = ""
+            try:
+                exch = (getattr(t.fast_info, "exchange", "") or "").upper()
+            except Exception:
+                pass
+            if not exch:
+                # As a fallback verify by checking if we can pull history (delisted = no)
+                try:
+                    h = t.history(period="5d", interval="1d")
+                    if h is None or len(h) == 0:
+                        return None  # delisted or invalid
+                except Exception:
+                    return None
+            if exch and exch in ROBINHOOD_EXCHANGES:
+                mover["exchange"] = exch
+                mover["robinhood_tradable"] = True
+                return mover
+            elif exch:
+                # Known non-RH exchange (e.g., PNK) - exclude
+                return None
+            else:
+                # Couldn't determine exchange but ticker is valid - exclude to be safe
+                return None
+        except Exception:
+            return None
 
-    print(f"  yfinance pre: {len(premarket_results)} | finviz movers: {len(finviz_movers)}")
+    with ThreadPoolExecutor(max_workers=3) as ex:
+        futures = [ex.submit(verify_finviz_ticker, m) for m in raw_finviz]
+        for f in as_completed(futures):
+            r = f.result()
+            if r is not None:
+                finviz_movers.append(r)
+    # Re-sort by change_pct descending (parallel verification scrambles order)
+    finviz_movers.sort(key=lambda x: (x.get("change_pct") or 0), reverse=True)
+
+    print(f"  yfinance pre: {len(premarket_results)} | finviz RH-tradable: {len(finviz_movers)}/{len(raw_finviz)}")
     write_json(DATA_DIR / "premarket.json", {
         "updated": now.isoformat(),
         "premarket": premarket_results,
