@@ -1,0 +1,587 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<title>Penny Stock Tracker</title>
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#0a0e14; --panel:#111821; --line:#1d2733; --text:#e6edf3;
+    --muted:#7d8590; --green:#3fb950; --red:#f85149; --amber:#d29922;
+    --accent:#58a6ff; --glow:rgba(88,166,255,.15);
+    --mono:'JetBrains Mono',monospace; --sans:'Space Grotesk',sans-serif;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{background:var(--bg);color:var(--text);font-family:var(--sans);min-height:100vh}
+
+  header{
+    border-bottom:1px solid var(--line);padding:1.2rem 2rem;
+    display:flex;justify-content:space-between;align-items:center;
+    background:linear-gradient(180deg,#0d141c,#0a0e14);
+    flex-wrap:wrap;gap:1rem;
+  }
+  header h1{font-size:1.3rem;letter-spacing:-.02em;font-weight:700}
+  header h1 span{color:var(--accent)}
+  .pulse{display:inline-block;width:8px;height:8px;border-radius:50%;background:var(--green);margin-right:.5rem;box-shadow:0 0 12px var(--green);animation:pulse 2s infinite}
+  @keyframes pulse{0%,100%{opacity:1}50%{opacity:.4}}
+  .status{font-family:var(--mono);font-size:.75rem;color:var(--muted)}
+
+  nav{display:flex;gap:0;border-bottom:1px solid var(--line);background:#0d141c;padding:0 2rem;overflow-x:auto}
+  nav button{
+    background:none;border:none;color:var(--muted);padding:1rem 1.5rem;cursor:pointer;
+    font-family:var(--sans);font-size:.9rem;font-weight:500;
+    border-bottom:2px solid transparent;transition:all .15s;white-space:nowrap
+  }
+  nav button:hover{color:var(--text)}
+  nav button.active{color:var(--accent);border-bottom-color:var(--accent)}
+
+  main{padding:2rem;max-width:1600px;margin:0 auto}
+
+  .warning{
+    background:rgba(248,81,73,.08);border:1px solid var(--red);border-left:4px solid var(--red);
+    padding:1rem 1.25rem;border-radius:6px;margin-bottom:1.5rem;font-size:.85rem;line-height:1.55
+  }
+  .warning strong{color:var(--red)}
+
+  .stats-row{display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));gap:1rem;margin-bottom:1.5rem}
+  .stat-card{background:var(--panel);border:1px solid var(--line);padding:1.1rem 1.2rem;border-radius:8px}
+  .stat-label{font-size:.7rem;color:var(--muted);text-transform:uppercase;letter-spacing:.08em;margin-bottom:.3rem}
+  .stat-value{font-family:var(--mono);font-size:1.5rem;font-weight:700;letter-spacing:-.02em}
+
+  table{width:100%;border-collapse:collapse;background:var(--panel);border:1px solid var(--line);border-radius:8px;overflow:hidden}
+  th{
+    text-align:left;padding:.85rem 1rem;font-size:.7rem;color:var(--muted);
+    text-transform:uppercase;letter-spacing:.08em;border-bottom:1px solid var(--line);
+    font-weight:600;background:#0d141c
+  }
+  td{padding:.75rem 1rem;border-bottom:1px solid var(--line);font-family:var(--mono);font-size:.85rem}
+  tr:hover{background:#141c26}
+  tr:last-child td{border-bottom:none}
+  .sym{font-weight:700;color:var(--accent);font-family:var(--mono)}
+  .up{color:var(--green)}.down{color:var(--red)}
+  .score-pill{display:inline-block;padding:.2rem .6rem;border-radius:999px;font-size:.75rem;font-weight:700;font-family:var(--mono)}
+  .score-high{background:rgba(63,185,80,.15);color:var(--green);border:1px solid var(--green)}
+  .score-mid{background:rgba(210,153,34,.15);color:var(--amber);border:1px solid var(--amber)}
+  .score-low{background:rgba(125,133,144,.15);color:var(--muted);border:1px solid var(--muted)}
+  .signals{display:flex;flex-wrap:wrap;gap:.3rem}
+  .sig-tag{font-size:.7rem;padding:.15rem .5rem;background:#1d2733;border-radius:4px;color:var(--text);font-family:var(--sans)}
+
+  .panel{background:var(--panel);border:1px solid var(--line);border-radius:8px;padding:1.5rem;margin-bottom:1.5rem}
+  .panel h2{font-size:1rem;margin-bottom:1rem;letter-spacing:-.01em}
+
+  .news-item{padding:1rem 0;border-bottom:1px solid var(--line)}
+  .news-item:last-child{border-bottom:none}
+  .news-meta{display:flex;gap:.75rem;align-items:center;margin-bottom:.4rem;font-size:.75rem;color:var(--muted);font-family:var(--mono);flex-wrap:wrap}
+  .news-sym{font-weight:700;color:var(--accent)}
+  .news-title{color:var(--text);text-decoration:none;font-weight:500;line-height:1.4;display:block;margin-bottom:.4rem}
+  .news-title:hover{color:var(--accent)}
+  .news-kws{display:flex;gap:.3rem;flex-wrap:wrap}
+  .sent-bullish{background:rgba(63,185,80,.15);color:var(--green);border:1px solid var(--green);padding:.15rem .5rem;border-radius:4px;font-size:.7rem;font-family:var(--mono)}
+  .sent-bearish{background:rgba(248,81,73,.15);color:var(--red);border:1px solid var(--red);padding:.15rem .5rem;border-radius:4px;font-size:.7rem;font-family:var(--mono)}
+  .sent-neutral{background:#1d2733;color:var(--muted);padding:.15rem .5rem;border-radius:4px;font-size:.7rem;font-family:var(--mono)}
+  .sent-mixed{background:rgba(210,153,34,.15);color:var(--amber);border:1px solid var(--amber);padding:.15rem .5rem;border-radius:4px;font-size:.7rem;font-family:var(--mono)}
+
+  button.primary{background:var(--accent);color:#0a0e14;border:none;padding:.55rem 1.1rem;border-radius:6px;font-weight:600;cursor:pointer;font-family:var(--sans)}
+  button.ghost{background:transparent;color:var(--text);border:1px solid var(--line);padding:.5rem 1rem;border-radius:6px;cursor:pointer;font-family:var(--sans)}
+  button.ghost:hover{border-color:var(--accent);color:var(--accent)}
+  input,select{background:#0a0e14;border:1px solid var(--line);color:var(--text);padding:.5rem .75rem;border-radius:6px;font-family:var(--mono);font-size:.85rem}
+  input:focus,select:focus{outline:none;border-color:var(--accent)}
+
+  .toolbar{display:flex;gap:.75rem;flex-wrap:wrap;align-items:center;padding:1rem;background:var(--panel);border:1px solid var(--line);border-radius:8px;margin-bottom:1.5rem}
+  .form-row{display:flex;gap:.75rem;flex-wrap:wrap;margin-bottom:1rem}
+  .form-row input,.form-row select{flex:1;min-width:120px}
+  .hidden{display:none}
+  .empty{text-align:center;padding:3rem;color:var(--muted)}
+  .loader{display:inline-block;width:14px;height:14px;border:2px solid var(--line);border-top-color:var(--accent);border-radius:50%;animation:spin .8s linear infinite}
+  @keyframes spin{to{transform:rotate(360deg)}}
+  .footer-note{text-align:center;color:var(--muted);font-size:.75rem;margin-top:3rem;padding-bottom:2rem;line-height:1.7}
+  .footer-note a{color:var(--accent);text-decoration:none}
+</style>
+</head>
+<body>
+
+<header>
+  <h1>PENNY<span>•</span>TRACKER</h1>
+  <div class="status"><span class="pulse"></span><span id="connStatus">loading data…</span></div>
+</header>
+
+<nav>
+  <button class="tab active" data-tab="scanner">📊 Scanner</button>
+  <button class="tab" data-tab="premarket">🌅 Pre-Market</button>
+  <button class="tab" data-tab="news">📰 News & Catalysts</button>
+  <button class="tab" data-tab="watchlist">⭐ Watchlist</button>
+  <button class="tab" data-tab="trades">📓 Trade Journal</button>
+  <button class="tab" data-tab="about">ℹ About</button>
+</nav>
+
+<main>
+
+  <div class="warning">
+    <strong>⚠ Reality check:</strong> This dashboard shows real market data and technical signals — it does <strong>NOT</strong> predict which stocks will go up. Penny stocks are highly volatile and often manipulated. Most retail day traders lose money over time. Use this to learn and track your own decisions, not as a money printer.
+  </div>
+
+  <div class="stats-row" id="topStats"></div>
+
+  <!-- SCANNER -->
+  <section id="tab-scanner">
+    <div id="scanResults" class="empty"><div class="loader"></div></div>
+  </section>
+
+  <!-- PRE-MARKET -->
+  <section id="tab-premarket" class="hidden">
+    <div class="panel">
+      <h2>Pre-Market Gappers (yfinance)</h2>
+      <p style="color:var(--muted);font-size:.85rem;margin-bottom:1rem">Tickers with notable price moves in extended hours (4:00–9:30am ET). Empty outside pre-market window.</p>
+      <div id="premarketResults"></div>
+    </div>
+    <div class="panel">
+      <h2>Top Movers (Finviz)</h2>
+      <p style="color:var(--muted);font-size:.85rem;margin-bottom:1rem">Top % gainers regardless of session — useful for spotting momentum stocks.</p>
+      <div id="finvizResults"></div>
+    </div>
+  </section>
+
+  <!-- NEWS -->
+  <section id="tab-news" class="hidden">
+    <div class="toolbar">
+      <label style="color:var(--muted);font-size:.85rem">Filter:</label>
+      <select id="newsFilter">
+        <option value="all">All news</option>
+        <option value="bullish">Bullish only</option>
+        <option value="bearish">Bearish only</option>
+        <option value="catalyst">With catalysts</option>
+      </select>
+    </div>
+    <div class="panel"><div id="newsList"></div></div>
+  </section>
+
+  <!-- WATCHLIST -->
+  <section id="tab-watchlist" class="hidden">
+    <div class="toolbar">
+      <input id="newSymbol" placeholder="Add ticker (e.g. SNDL)" style="width:200px;text-transform:uppercase"/>
+      <button class="primary" id="addBtn">+ Add to watchlist</button>
+      <button class="ghost" id="exportBtn">⬇ Export</button>
+      <button class="ghost" id="importBtn">⬆ Import</button>
+      <input type="file" id="importFile" style="display:none" accept=".json"/>
+    </div>
+    <p style="color:var(--muted);font-size:.8rem;margin-bottom:1rem">Watchlist is stored in your browser. Export to back up.</p>
+    <div id="watchlistResults"></div>
+  </section>
+
+  <!-- TRADES -->
+  <section id="tab-trades" class="hidden">
+    <div class="stats-row" id="tradeStats"></div>
+    <div class="panel">
+      <h2>Log a trade</h2>
+      <div class="form-row">
+        <input id="tSym" placeholder="Symbol" style="text-transform:uppercase"/>
+        <select id="tSide"><option value="buy">Long</option><option value="sell">Short</option></select>
+        <input id="tQty" type="number" placeholder="Shares"/>
+        <input id="tEntry" type="number" step="0.0001" placeholder="Entry $"/>
+        <input id="tExit" type="number" step="0.0001" placeholder="Exit $ (blank=open)"/>
+      </div>
+      <div class="form-row">
+        <input id="tNotes" placeholder="Notes / why you took the trade" style="flex:3"/>
+        <button class="primary" id="logTrade">Log Trade</button>
+      </div>
+    </div>
+    <div id="tradesTable"></div>
+  </section>
+
+  <!-- ABOUT -->
+  <section id="tab-about" class="hidden">
+    <div class="panel">
+      <h2>How it works</h2>
+      <p style="line-height:1.7;color:var(--muted);font-size:.9rem">
+        A GitHub Actions workflow runs <strong style="color:var(--text)">hourly</strong> Monday-Friday. It scans ~60 liquid penny/low-priced tickers via Yahoo Finance, fetches pre-market data, scrapes news from Yahoo Finance and Finviz, classifies headlines for catalyst keywords, and commits everything back to the repo as JSON. This page reads those JSON files directly — no backend server needed.
+      </p>
+      <h2 style="margin-top:1.5rem">Scoring (heuristic, NOT a prediction)</h2>
+      <ul style="margin:1rem 0 1rem 1.5rem;color:var(--muted);line-height:1.9;font-size:.9rem">
+        <li>Rel volume &gt; 2× — <strong style="color:var(--text)">+25</strong></li>
+        <li>Gap &gt; 5% — <strong style="color:var(--text)">+15</strong></li>
+        <li>RSI &lt; 30 (oversold) — <strong style="color:var(--text)">+15</strong></li>
+        <li>RSI &gt; 70 (overbought) — <strong style="color:var(--text)">+10</strong></li>
+        <li>Uptrend (price &gt; MA20, MA5 &gt; MA20) — <strong style="color:var(--text)">+10</strong></li>
+        <li>ATR &gt; 8% (volatile) — <strong style="color:var(--text)">+10</strong></li>
+      </ul>
+      <h2 style="margin-top:1.5rem">News classification</h2>
+      <p style="line-height:1.7;color:var(--muted);font-size:.9rem">
+        Headlines are tagged as bullish (FDA approval, contract win, beats estimates, buyback…), bearish (delisting, dilution, SEC investigation, missed estimates…), mixed, or neutral. This is keyword matching — it's a starting point, not analysis.
+      </p>
+      <h2 style="margin-top:1.5rem">Honest disclaimers</h2>
+      <ul style="margin:1rem 0 0 1.5rem;color:var(--muted);line-height:1.9;font-size:.9rem">
+        <li>No algorithm reliably predicts tomorrow's price. If one existed, it wouldn't be free on GitHub.</li>
+        <li>Penny stocks are favorite targets of pump-and-dump schemes. High score ≠ legitimate move.</li>
+        <li>Most retail day traders lose money over time. Studies put profitability under 20% over multi-year horizons.</li>
+        <li>This is educational software. Not financial advice.</li>
+      </ul>
+    </div>
+  </section>
+
+  <div class="footer-note">
+    Data harvested hourly via GitHub Actions · Sources: Yahoo Finance, Finviz · Not financial advice
+    <br/><span id="lastUpdate"></span>
+  </div>
+</main>
+
+<script>
+// ============================================================
+// DATA LOADING — reads JSON files committed by the harvester
+// ============================================================
+// When deployed to GitHub Pages, the path is just /data/*.json
+// Works locally too if you open the file directly.
+const DATA_BASE = './data';
+
+const state = { scan: null, premarket: null, news: null, status: null };
+
+async function loadData(){
+  try{
+    const [scan, pre, news, status] = await Promise.all([
+      fetch(`${DATA_BASE}/scan.json`).then(r => r.ok ? r.json() : null).catch(() => null),
+      fetch(`${DATA_BASE}/premarket.json`).then(r => r.ok ? r.json() : null).catch(() => null),
+      fetch(`${DATA_BASE}/news.json`).then(r => r.ok ? r.json() : null).catch(() => null),
+      fetch(`${DATA_BASE}/status.json`).then(r => r.ok ? r.json() : null).catch(() => null),
+    ]);
+    state.scan = scan; state.premarket = pre; state.news = news; state.status = status;
+    renderAll();
+  }catch(e){
+    document.getElementById('connStatus').textContent = 'error loading data';
+    console.error(e);
+  }
+}
+
+// ============================================================
+// FORMATTING
+// ============================================================
+function fmt(n, d=2){ return n==null?'—':Number(n).toFixed(d) }
+function fmtVol(n){
+  if(!n) return '—';
+  if(n>=1e9) return (n/1e9).toFixed(1)+'B';
+  if(n>=1e6) return (n/1e6).toFixed(1)+'M';
+  if(n>=1e3) return (n/1e3).toFixed(1)+'K';
+  return n;
+}
+function pct(n){
+  if(n==null) return '—';
+  const cls = n>=0?'up':'down';
+  return `<span class="${cls}">${n>=0?'+':''}${n.toFixed(2)}%</span>`;
+}
+function scoreClass(s){ return s>=50?'score-high':s>=25?'score-mid':'score-low' }
+function timeAgo(iso){
+  if(!iso) return '';
+  const d = new Date(iso);
+  const diff = (Date.now() - d.getTime())/1000;
+  if(diff < 60) return Math.floor(diff)+'s ago';
+  if(diff < 3600) return Math.floor(diff/60)+'m ago';
+  if(diff < 86400) return Math.floor(diff/3600)+'h ago';
+  return Math.floor(diff/86400)+'d ago';
+}
+
+// ============================================================
+// RENDERING
+// ============================================================
+function renderTopStats(){
+  const s = state.status;
+  if(!s){
+    document.getElementById('topStats').innerHTML = '';
+    return;
+  }
+  document.getElementById('topStats').innerHTML = `
+    <div class="stat-card"><div class="stat-label">Last harvest</div>
+      <div class="stat-value" style="font-size:1rem">${timeAgo(s.updated)}</div></div>
+    <div class="stat-card"><div class="stat-label">Universe scanned</div>
+      <div class="stat-value">${s.universe_size||'—'}</div></div>
+    <div class="stat-card"><div class="stat-label">Scan matches</div>
+      <div class="stat-value up">${s.scan_matches||0}</div></div>
+    <div class="stat-card"><div class="stat-label">Pre-market movers</div>
+      <div class="stat-value">${s.premarket_movers||0}</div></div>
+    <div class="stat-card"><div class="stat-label">News items</div>
+      <div class="stat-value">${s.news_items||0}</div></div>
+  `;
+  document.getElementById('lastUpdate').textContent = 'Last harvest: '+new Date(s.updated).toLocaleString();
+  document.getElementById('connStatus').textContent = 'data updated '+timeAgo(s.updated);
+}
+
+function renderScanTable(results){
+  if(!results || results.length===0)
+    return '<div class="empty"><div style="font-size:1.5rem">∅</div><p>No scan data yet. Waiting on first harvest.</p></div>';
+  let html = `<table><thead><tr>
+    <th>Symbol</th><th>Price</th><th>Day %</th><th>Gap %</th>
+    <th>Rel Vol</th><th>Volume</th><th>RSI</th><th>ATR %</th>
+    <th>Score</th><th>Signals</th></tr></thead><tbody>`;
+  for(const r of results){
+    html += `<tr>
+      <td class="sym">${r.symbol}</td>
+      <td>$${fmt(r.price,4)}</td>
+      <td>${pct(r.day_change_pct)}</td>
+      <td>${pct(r.gap_pct)}</td>
+      <td>${fmt(r.rel_volume,2)}x</td>
+      <td>${fmtVol(r.volume)}</td>
+      <td>${r.rsi==null?'—':fmt(r.rsi,1)}</td>
+      <td>${fmt(r.atr_pct,1)}%</td>
+      <td><span class="score-pill ${scoreClass(r.score)}">${r.score}</span></td>
+      <td><div class="signals">${(r.signals||[]).map(s=>`<span class="sig-tag">${s}</span>`).join('')}</div></td>
+    </tr>`;
+  }
+  return html + '</tbody></table>';
+}
+
+function renderScanner(){
+  if(!state.scan){
+    document.getElementById('scanResults').innerHTML = '<div class="empty"><p>No data yet. The harvester runs hourly via GitHub Actions.</p></div>';
+    return;
+  }
+  document.getElementById('scanResults').innerHTML = renderScanTable(state.scan.results);
+}
+
+function renderPremarket(){
+  const pre = state.premarket;
+  if(!pre){
+    document.getElementById('premarketResults').innerHTML = '<div class="empty"><p>No pre-market data yet.</p></div>';
+    document.getElementById('finvizResults').innerHTML = '';
+    return;
+  }
+  // pre-market table
+  if(!pre.premarket || pre.premarket.length===0){
+    document.getElementById('premarketResults').innerHTML = '<div class="empty"><p>No pre-market activity detected. (Pre-market runs 4:00-9:30am ET.)</p></div>';
+  }else{
+    let html = `<table><thead><tr>
+      <th>Symbol</th><th>Prev Close</th><th>Pre Price</th><th>Gap %</th>
+      <th>Pre High</th><th>Pre Low</th><th>Volume</th></tr></thead><tbody>`;
+    for(const r of pre.premarket){
+      html += `<tr>
+        <td class="sym">${r.symbol}</td>
+        <td>$${fmt(r.prev_close,4)}</td>
+        <td>$${fmt(r.pre_price,4)}</td>
+        <td>${pct(r.gap_pct)}</td>
+        <td>$${fmt(r.pre_high,4)}</td>
+        <td>$${fmt(r.pre_low,4)}</td>
+        <td>${fmtVol(r.pre_volume)}</td>
+      </tr>`;
+    }
+    document.getElementById('premarketResults').innerHTML = html+'</tbody></table>';
+  }
+  // finviz gainers
+  if(!pre.top_gainers || pre.top_gainers.length===0){
+    document.getElementById('finvizResults').innerHTML = '<div class="empty"><p>No top gainers data.</p></div>';
+  }else{
+    let html = `<table><thead><tr>
+      <th>Symbol</th><th>Price</th><th>Change %</th><th>Volume</th></tr></thead><tbody>`;
+    for(const r of pre.top_gainers){
+      html += `<tr>
+        <td class="sym">${r.symbol}</td>
+        <td>${r.price?'$'+fmt(r.price,2):'—'}</td>
+        <td>${pct(r.change_pct)}</td>
+        <td>${fmtVol(r.volume)}</td>
+      </tr>`;
+    }
+    document.getElementById('finvizResults').innerHTML = html+'</tbody></table>';
+  }
+}
+
+function renderNews(){
+  const filter = document.getElementById('newsFilter').value;
+  let items = state.news?.items || [];
+  if(filter === 'bullish') items = items.filter(n => n.sentiment === 'bullish');
+  if(filter === 'bearish') items = items.filter(n => n.sentiment === 'bearish');
+  if(filter === 'catalyst') items = items.filter(n => n.matched_keywords && n.matched_keywords.length > 0);
+  if(items.length === 0){
+    document.getElementById('newsList').innerHTML = '<div class="empty"><p>No news items match.</p></div>';
+    return;
+  }
+  let html = '';
+  for(const n of items){
+    const sentClass = `sent-${n.sentiment}`;
+    html += `<div class="news-item">
+      <div class="news-meta">
+        <span class="news-sym">${n.symbol}</span>
+        <span class="${sentClass}">${n.sentiment.toUpperCase()}</span>
+        <span>${n.source||''}</span>
+        <span>${timeAgo(n.published)}</span>
+      </div>
+      <a class="news-title" href="${n.url}" target="_blank" rel="noopener">${n.title}</a>
+      ${n.matched_keywords && n.matched_keywords.length ? `
+        <div class="news-kws">${n.matched_keywords.map(k=>`<span class="sig-tag">${k}</span>`).join('')}</div>
+      ` : ''}
+    </div>`;
+  }
+  document.getElementById('newsList').innerHTML = html;
+}
+
+// ============================================================
+// WATCHLIST (localStorage)
+// ============================================================
+function getWatchlist(){
+  try{ return JSON.parse(localStorage.getItem('watchlist')||'[]'); }catch{ return []; }
+}
+function saveWatchlist(wl){ localStorage.setItem('watchlist', JSON.stringify(wl)); }
+
+function renderWatchlist(){
+  const wl = getWatchlist();
+  if(wl.length === 0){
+    document.getElementById('watchlistResults').innerHTML = '<div class="empty"><p>📋 Watchlist empty. Add tickers above.</p></div>';
+    return;
+  }
+  // match against scan data if available
+  const scanMap = {};
+  (state.scan?.results || []).forEach(r => { scanMap[r.symbol] = r; });
+  const matched = wl.map(s => scanMap[s]).filter(Boolean);
+  const unmatched = wl.filter(s => !scanMap[s]);
+
+  let html = '';
+  if(matched.length){
+    html += '<h2 style="margin-bottom:1rem;font-size:.9rem;color:var(--muted)">In latest scan:</h2>';
+    html += renderScanTable(matched);
+  }
+  if(unmatched.length){
+    html += '<h2 style="margin:1.5rem 0 1rem;font-size:.9rem;color:var(--muted)">Not in latest scan (will appear when conditions met):</h2>';
+    html += '<div class="panel">'+unmatched.map(s=>`
+      <span class="sig-tag" style="margin-right:.5rem">
+        <span class="sym">${s}</span>
+        <button class="ghost" style="padding:.1rem .4rem;margin-left:.4rem;font-size:.7rem" onclick="removeFromWatch('${s}')">✕</button>
+      </span>`).join('')+'</div>';
+  }
+  document.getElementById('watchlistResults').innerHTML = html;
+}
+window.removeFromWatch = function(sym){
+  const wl = getWatchlist().filter(s => s !== sym);
+  saveWatchlist(wl); renderWatchlist();
+};
+
+document.getElementById('addBtn').onclick = () => {
+  const s = document.getElementById('newSymbol').value.trim().toUpperCase();
+  if(!s) return;
+  const wl = getWatchlist();
+  if(!wl.includes(s)) wl.push(s);
+  saveWatchlist(wl);
+  document.getElementById('newSymbol').value = '';
+  renderWatchlist();
+};
+document.getElementById('exportBtn').onclick = () => {
+  const data = { watchlist: getWatchlist(), trades: getTrades() };
+  const blob = new Blob([JSON.stringify(data, null, 2)], {type:'application/json'});
+  const a = document.createElement('a');
+  a.href = URL.createObjectURL(blob);
+  a.download = `penny-tracker-${new Date().toISOString().slice(0,10)}.json`;
+  a.click();
+};
+document.getElementById('importBtn').onclick = () => document.getElementById('importFile').click();
+document.getElementById('importFile').onchange = async (e) => {
+  const f = e.target.files[0];
+  if(!f) return;
+  const data = JSON.parse(await f.text());
+  if(data.watchlist) saveWatchlist(data.watchlist);
+  if(data.trades) saveTrades(data.trades);
+  renderWatchlist(); renderTrades();
+  alert('Imported successfully');
+};
+
+// ============================================================
+// TRADES (localStorage)
+// ============================================================
+function getTrades(){
+  try{ return JSON.parse(localStorage.getItem('trades')||'[]'); }catch{ return []; }
+}
+function saveTrades(t){ localStorage.setItem('trades', JSON.stringify(t)); }
+
+function renderTrades(){
+  const trades = getTrades();
+  const closed = trades.filter(t => t.status === 'closed');
+  const totalPL = closed.reduce((s,t) => s + (t.pl||0), 0);
+  const wins = closed.filter(t => t.pl > 0).length;
+  const losses = closed.length - wins;
+  document.getElementById('tradeStats').innerHTML = `
+    <div class="stat-card"><div class="stat-label">Total P&L</div>
+      <div class="stat-value ${totalPL>=0?'up':'down'}">$${fmt(totalPL,2)}</div></div>
+    <div class="stat-card"><div class="stat-label">Wins</div>
+      <div class="stat-value up">${wins}</div></div>
+    <div class="stat-card"><div class="stat-label">Losses</div>
+      <div class="stat-value down">${losses}</div></div>
+    <div class="stat-card"><div class="stat-label">Win rate</div>
+      <div class="stat-value">${wins+losses>0?Math.round(100*wins/(wins+losses))+'%':'—'}</div></div>
+    <div class="stat-card"><div class="stat-label">Open positions</div>
+      <div class="stat-value">${trades.length-closed.length}</div></div>
+  `;
+  if(trades.length === 0){
+    document.getElementById('tradesTable').innerHTML = '<div class="empty"><p>No trades logged yet.</p></div>';
+    return;
+  }
+  let html = `<table><thead><tr>
+    <th>Date</th><th>Symbol</th><th>Side</th><th>Qty</th><th>Entry</th><th>Exit</th><th>P&L</th><th>Status</th><th>Notes</th><th></th>
+    </tr></thead><tbody>`;
+  for(const t of [...trades].reverse()){
+    html += `<tr>
+      <td>${new Date(t.date).toLocaleDateString()}</td>
+      <td class="sym">${t.symbol}</td>
+      <td>${t.side}</td>
+      <td>${t.qty}</td>
+      <td>$${fmt(t.entry_price,4)}</td>
+      <td>${t.exit_price?'$'+fmt(t.exit_price,4):'—'}</td>
+      <td class="${(t.pl||0)>=0?'up':'down'}">${t.pl!=null?'$'+fmt(t.pl,2):'—'}</td>
+      <td>${t.status}</td>
+      <td style="font-family:var(--sans)">${t.notes||''}</td>
+      <td><button class="ghost" style="padding:.2rem .5rem;font-size:.7rem" onclick="deleteTrade('${t.id}')">✕</button></td>
+    </tr>`;
+  }
+  document.getElementById('tradesTable').innerHTML = html + '</tbody></table>';
+}
+window.deleteTrade = function(id){
+  if(!confirm('Delete this trade?')) return;
+  saveTrades(getTrades().filter(t => t.id !== id));
+  renderTrades();
+};
+
+document.getElementById('logTrade').onclick = () => {
+  const sym = document.getElementById('tSym').value.toUpperCase();
+  const qty = parseFloat(document.getElementById('tQty').value);
+  const entry = parseFloat(document.getElementById('tEntry').value);
+  const exit = parseFloat(document.getElementById('tExit').value) || null;
+  if(!sym || !qty || !entry){ alert('Symbol, qty, entry required'); return; }
+  const side = document.getElementById('tSide').value;
+  const trade = {
+    id: String(Date.now()),
+    symbol: sym, side, qty, entry_price: entry, exit_price: exit,
+    date: new Date().toISOString(),
+    notes: document.getElementById('tNotes').value,
+    status: exit ? 'closed' : 'open',
+  };
+  if(exit){
+    trade.pl = (side==='buy' ? exit-entry : entry-exit) * qty;
+    trade.pl = Math.round(trade.pl*100)/100;
+  }
+  const trades = getTrades();
+  trades.push(trade);
+  saveTrades(trades);
+  ['tSym','tQty','tEntry','tExit','tNotes'].forEach(id => document.getElementById(id).value='');
+  renderTrades();
+};
+
+// ============================================================
+// TABS
+// ============================================================
+document.querySelectorAll('.tab').forEach(b => b.onclick = () => {
+  document.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
+  b.classList.add('active');
+  document.querySelectorAll('main > section').forEach(s => s.classList.add('hidden'));
+  document.getElementById('tab-' + b.dataset.tab).classList.remove('hidden');
+});
+
+document.getElementById('newsFilter').onchange = renderNews;
+
+function renderAll(){
+  renderTopStats();
+  renderScanner();
+  renderPremarket();
+  renderNews();
+  renderWatchlist();
+  renderTrades();
+}
+
+// Initial load
+loadData();
+// Refresh every 5 minutes (in case harvester ran)
+setInterval(loadData, 5*60*1000);
+</script>
+</body>
+</html>
