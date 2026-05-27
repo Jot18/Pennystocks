@@ -1,7 +1,16 @@
 {
-  "updated": "2026-05-27T21:03:40.615845+00:00",
+  "updated": "2026-05-27T22:57:45.006709+00:00",
   "count": 75,
   "items": [
+    {
+      "symbol": "NIO",
+      "title": "Stock Market Today, May 27: Nio Jumps After ES9 SUV Launches at Lower Than Expected Price",
+      "url": "https://www.fool.com/coverage/stock-market-today/2026/05/27/stock-market-today-may-27-nio-jumps-after-es9-suv-launches-at-lower-than-expected-price/",
+      "source": "Motley Fool",
+      "published": "2026-05-27T21:55:20Z",
+      "sentiment": "neutral",
+      "matched_keywords": []
+    },
     {
       "symbol": "PLUG",
       "title": "Plug Power Is Up 6% but FuelCell Energy and Bloom Energy Are in the Red. What\u2019s Going On With Fuel Cell Stocks?",
@@ -62,15 +71,6 @@
       "url": "https://stocktwits.com/news-articles/markets/equity/nok-mu-bb-stocks-hit-52-week-highs-today-what-is-fueling-the-rally/cZgXwdPReA5",
       "source": "Stocktwits",
       "published": "2026-05-27T03:13:10Z",
-      "sentiment": "neutral",
-      "matched_keywords": []
-    },
-    {
-      "symbol": "NIO",
-      "title": "Ferrari reverses after controversial EV announcement",
-      "url": "https://www.thestreet.com/automotive/ferrari-reverses-after-controversial-ev-announcement",
-      "source": "TheStreet",
-      "published": "2026-05-26T18:47:00Z",
       "sentiment": "neutral",
       "matched_keywords": []
     },
