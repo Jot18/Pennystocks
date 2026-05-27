@@ -36,26 +36,27 @@
   nav button:hover{color:var(--text)}
   nav button.active{color:var(--accent);border-bottom-color:var(--accent)}
 
-  main{padding:2rem;max-width:1600px;margin:0 auto}
+  main{padding:1.5rem 2rem;width:100%;max-width:none;margin:0}
 
   .warning{
     background:rgba(248,81,73,.08);border:1px solid var(--red);border-left:4px solid var(--red);
-    padding:1rem 1.25rem;border-radius:6px;margin-bottom:1.5rem;font-size:.85rem;line-height:1.55
+    padding:1rem 1.25rem;border-radius:6px;margin-bottom:1.5rem;font-size:.85rem;line-height:1.55;
+    max-width:1400px
   }
   .warning strong{color:var(--red)}
 
-  .stats-row{display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));gap:1rem;margin-bottom:1.5rem}
+  .stats-row{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:1rem;margin-bottom:1.5rem}
   .stat-card{background:var(--panel);border:1px solid var(--line);padding:1.1rem 1.2rem;border-radius:8px}
   .stat-label{font-size:.7rem;color:var(--muted);text-transform:uppercase;letter-spacing:.08em;margin-bottom:.3rem}
   .stat-value{font-family:var(--mono);font-size:1.5rem;font-weight:700;letter-spacing:-.02em}
 
   table{width:100%;border-collapse:collapse;background:var(--panel);border:1px solid var(--line);border-radius:8px;overflow:hidden}
   th{
-    text-align:left;padding:.85rem 1rem;font-size:.7rem;color:var(--muted);
+    text-align:left;padding:.85rem 1.25rem;font-size:.7rem;color:var(--muted);
     text-transform:uppercase;letter-spacing:.08em;border-bottom:1px solid var(--line);
     font-weight:600;background:#0d141c
   }
-  td{padding:.75rem 1rem;border-bottom:1px solid var(--line);font-family:var(--mono);font-size:.85rem}
+  td{padding:.75rem 1.25rem;border-bottom:1px solid var(--line);font-family:var(--mono);font-size:.85rem}
   tr:hover{background:#141c26}
   tr:last-child td{border-bottom:none}
   .sym{font-weight:700;color:var(--accent);font-family:var(--mono)}
@@ -71,6 +72,7 @@
 
   .panel{background:var(--panel);border:1px solid var(--line);border-radius:8px;padding:1.5rem;margin-bottom:1.5rem}
   .panel h2{font-size:1rem;margin-bottom:1rem;letter-spacing:-.01em}
+  #tab-about .panel{max-width:1100px}
 
   .news-item{padding:1rem 0;border-bottom:1px solid var(--line)}
   .news-item:last-child{border-bottom:none}
