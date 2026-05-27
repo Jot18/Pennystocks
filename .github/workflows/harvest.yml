@@ -69,8 +69,21 @@ jobs:
           git add docs/data/
           if git diff --staged --quiet; then
             echo "No data changes — skipping commit."
-          else
-            TIMESTAMP=$(date -u +"%Y-%m-%d %H:%M UTC")
-            git commit -m "📊 Harvest: $TIMESTAMP"
-            git push
+            exit 0
           fi
+          TIMESTAMP=$(date -u +"%Y-%m-%d %H:%M UTC")
+          git commit -m "📊 Harvest: $TIMESTAMP"
+
+          # Retry push up to 5 times with rebase to handle concurrent commits
+          for i in 1 2 3 4 5; do
+            echo "Push attempt $i..."
+            if git push; then
+              echo "✓ Pushed successfully"
+              exit 0
+            fi
+            echo "Push failed, pulling with rebase and retrying..."
+            git pull --rebase origin main || true
+            sleep $((i * 2))
+          done
+          echo "✗ Failed to push after 5 attempts"
+          exit 1
