@@ -66,6 +66,8 @@
   .score-low{background:rgba(125,133,144,.15);color:var(--muted);border:1px solid var(--muted)}
   .signals{display:flex;flex-wrap:wrap;gap:.3rem}
   .sig-tag{font-size:.7rem;padding:.15rem .5rem;background:#1d2733;border-radius:4px;color:var(--text);font-family:var(--sans)}
+  .rh-badge{font-size:.65rem;padding:.1rem .4rem;background:rgba(0,200,5,.15);color:#00c805;border:1px solid #00c805;border-radius:4px;font-family:var(--mono);font-weight:600;letter-spacing:.05em}
+  .exch-tag{font-size:.65rem;padding:.1rem .4rem;background:#1d2733;color:var(--muted);border-radius:4px;font-family:var(--mono);letter-spacing:.05em}
 
   .panel{background:var(--panel);border:1px solid var(--line);border-radius:8px;padding:1.5rem;margin-bottom:1.5rem}
   .panel h2{font-size:1rem;margin-bottom:1rem;letter-spacing:-.01em}
@@ -119,6 +121,10 @@
 
   <div class="warning">
     <strong>⚠ Reality check:</strong> This dashboard shows real market data and technical signals — it does <strong>NOT</strong> predict which stocks will go up. Penny stocks are highly volatile and often manipulated. Most retail day traders lose money over time. Use this to learn and track your own decisions, not as a money printer.
+  </div>
+
+  <div class="warning" style="background:rgba(0,200,5,.08);border-color:#00c805;border-left-color:#00c805">
+    <strong style="color:#00c805">🟢 Robinhood-filtered:</strong> Only stocks listed on <strong>NYSE, NASDAQ, and NYSE American (AMEX)</strong> are included. OTC / Pink Sheets / Grey Market stocks are excluded since Robinhood does not support them. Look for the <span class="rh-badge">RH</span> badge to confirm tradability.
   </div>
 
   <div class="stats-row" id="topStats"></div>
@@ -307,12 +313,16 @@ function renderScanTable(results){
   if(!results || results.length===0)
     return '<div class="empty"><div style="font-size:1.5rem">∅</div><p>No scan data yet. Waiting on first harvest.</p></div>';
   let html = `<table><thead><tr>
-    <th>Symbol</th><th>Price</th><th>Day %</th><th>Gap %</th>
+    <th>Symbol</th><th>Exch</th><th>Price</th><th>Day %</th><th>Gap %</th>
     <th>Rel Vol</th><th>Volume</th><th>RSI</th><th>ATR %</th>
     <th>Score</th><th>Signals</th></tr></thead><tbody>`;
   for(const r of results){
+    const exchLabel = r.exchange && r.exchange !== 'unknown'
+      ? `<span class="exch-tag">${r.exchange}</span>`
+      : '<span class="exch-tag">?</span>';
     html += `<tr>
-      <td class="sym">${r.symbol}</td>
+      <td><span class="sym">${r.symbol}</span> ${r.robinhood_tradable ? '<span class="rh-badge">RH</span>' : ''}</td>
+      <td>${exchLabel}</td>
       <td>$${fmt(r.price,4)}</td>
       <td>${pct(r.day_change_pct)}</td>
       <td>${pct(r.gap_pct)}</td>
@@ -367,10 +377,17 @@ function renderPremarket(){
     document.getElementById('finvizResults').innerHTML = '<div class="empty"><p>No top gainers data.</p></div>';
   }else{
     let html = `<table><thead><tr>
-      <th>Symbol</th><th>Price</th><th>Change %</th><th>Volume</th></tr></thead><tbody>`;
+      <th>Symbol</th><th>Exch</th><th>Price</th><th>Change %</th><th>Volume</th></tr></thead><tbody>`;
     for(const r of pre.top_gainers){
+      const exchLabel = r.exchange && r.exchange !== 'unknown'
+        ? `<span class="exch-tag">${r.exchange}</span>`
+        : '<span class="exch-tag">?</span>';
+      const rhBadge = r.robinhood_tradable === true
+        ? '<span class="rh-badge">RH</span>'
+        : (r.robinhood_tradable === false ? '<span class="exch-tag" style="color:var(--red)">OTC</span>' : '');
       html += `<tr>
-        <td class="sym">${r.symbol}</td>
+        <td><span class="sym">${r.symbol}</span> ${rhBadge}</td>
+        <td>${exchLabel}</td>
         <td>${r.price?'$'+fmt(r.price,2):'—'}</td>
         <td>${pct(r.change_pct)}</td>
         <td>${fmtVol(r.volume)}</td>
