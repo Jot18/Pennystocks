@@ -1,164 +1,201 @@
 {
-  "updated": "2026-05-27T18:39:18.941355+00:00",
-  "premarket": [],
+  "updated": "2026-05-27T18:53:01.395263+00:00",
+  "premarket": [
+    {
+      "symbol": "NOK",
+      "pre_price": 15.97,
+      "prev_close": 16.8795,
+      "gap_pct": -5.39,
+      "pre_high": 17.13,
+      "pre_low": 15.85,
+      "pre_volume": 0
+    },
+    {
+      "symbol": "JAGX",
+      "pre_price": 3.175,
+      "prev_close": 3.02,
+      "gap_pct": 5.13,
+      "pre_high": 3.21,
+      "pre_low": 2.95,
+      "pre_volume": 0
+    },
+    {
+      "symbol": "JBLU",
+      "pre_price": 5.45,
+      "prev_close": 5.279,
+      "gap_pct": 3.24,
+      "pre_high": 5.46,
+      "pre_low": 5.27,
+      "pre_volume": 0
+    },
+    {
+      "symbol": "BB",
+      "pre_price": 8.382,
+      "prev_close": 8.6495,
+      "gap_pct": -3.09,
+      "pre_high": 8.66,
+      "pre_low": 8.18,
+      "pre_volume": 0
+    }
+  ],
   "top_gainers": [
     {
       "symbol": "ASTC",
-      "price": 17.38,
-      "change_pct": 603.44,
-      "volume": 131574554,
-      "exchange": "?",
-      "robinhood_tradable": null
-    },
-    {
-      "symbol": "AIM",
-      "price": 0.42,
-      "change_pct": 82.38,
-      "volume": 467962584,
+      "price": 14.25,
+      "change_pct": 476.77,
+      "volume": 133902501,
       "exchange": "?",
       "robinhood_tradable": null
     },
     {
       "symbol": "SNGX",
-      "price": 0.93,
-      "change_pct": 80.31,
-      "volume": 229116942,
+      "price": 0.94,
+      "change_pct": 82.92,
+      "volume": 230579467,
       "exchange": "?",
       "robinhood_tradable": null
     },
     {
       "symbol": "QTTB",
-      "price": 11.99,
-      "change_pct": 69.17,
-      "volume": 19316897,
+      "price": 12.18,
+      "change_pct": 71.79,
+      "volume": 19362344,
+      "exchange": "?",
+      "robinhood_tradable": null
+    },
+    {
+      "symbol": "AIM",
+      "price": 0.39,
+      "change_pct": 69.23,
+      "volume": 472509778,
       "exchange": "?",
       "robinhood_tradable": null
     },
     {
       "symbol": "AMSS",
-      "price": 5.89,
-      "change_pct": 64.54,
-      "volume": 16583554,
+      "price": 5.92,
+      "change_pct": 65.36,
+      "volume": 16620342,
       "exchange": "?",
       "robinhood_tradable": null
     },
     {
       "symbol": "HOTH",
-      "price": 1.16,
-      "change_pct": 63.77,
-      "volume": 117841636,
-      "exchange": "?",
-      "robinhood_tradable": null
-    },
-    {
-      "symbol": "RYOJ",
-      "price": 6.22,
-      "change_pct": 61.56,
-      "volume": 2562353,
+      "price": 1.14,
+      "change_pct": 60.95,
+      "volume": 118786361,
       "exchange": "?",
       "robinhood_tradable": null
     },
     {
       "symbol": "BRTX",
-      "price": 0.4,
-      "change_pct": 58.25,
-      "volume": 490267838,
+      "price": 0.39,
+      "change_pct": 56.12,
+      "volume": 493481367,
       "exchange": "?",
       "robinhood_tradable": null
     },
     {
       "symbol": "FGL",
-      "price": 2.77,
-      "change_pct": 47.34,
-      "volume": 32136249,
+      "price": 2.84,
+      "change_pct": 51.06,
+      "volume": 32305216,
       "exchange": "?",
       "robinhood_tradable": null
     },
     {
-      "symbol": "APPS",
-      "price": 6.95,
-      "change_pct": 44.48,
-      "volume": 45757503,
+      "symbol": "RYOJ",
+      "price": 5.72,
+      "change_pct": 48.57,
+      "volume": 2787958,
       "exchange": "?",
       "robinhood_tradable": null
     },
     {
       "symbol": "VCIG",
-      "price": 4.1,
-      "change_pct": 41.35,
-      "volume": 19451604,
-      "exchange": "?",
-      "robinhood_tradable": null
-    },
-    {
-      "symbol": "QTEX",
-      "price": 2.12,
-      "change_pct": 39.8,
-      "volume": 46488975,
+      "price": 4.17,
+      "change_pct": 43.79,
+      "volume": 19691081,
       "exchange": "?",
       "robinhood_tradable": null
     },
     {
       "symbol": "VTIX",
-      "price": 4.11,
-      "change_pct": 37.0,
-      "volume": 6128019,
+      "price": 4.23,
+      "change_pct": 41.06,
+      "volume": 6213570,
+      "exchange": "?",
+      "robinhood_tradable": null
+    },
+    {
+      "symbol": "APPS",
+      "price": 6.78,
+      "change_pct": 40.96,
+      "volume": 46308797,
+      "exchange": "?",
+      "robinhood_tradable": null
+    },
+    {
+      "symbol": "QTEX",
+      "price": 2.05,
+      "change_pct": 34.87,
+      "volume": 51866654,
       "exchange": "?",
       "robinhood_tradable": null
     },
     {
       "symbol": "NCPL",
-      "price": 1.42,
-      "change_pct": 32.61,
-      "volume": 24643877,
-      "exchange": "?",
-      "robinhood_tradable": null
-    },
-    {
-      "symbol": "ASTI",
-      "price": 7.28,
-      "change_pct": 29.17,
-      "volume": 5472952,
-      "exchange": "?",
-      "robinhood_tradable": null
-    },
-    {
-      "symbol": "DY",
-      "price": 537.95,
-      "change_pct": 27.94,
-      "volume": 975995,
+      "price": 1.44,
+      "change_pct": 34.58,
+      "volume": 24817755,
       "exchange": "?",
       "robinhood_tradable": null
     },
     {
       "symbol": "HSPT",
-      "price": 11.55,
-      "change_pct": 27.2,
-      "volume": 27420,
-      "exchange": "?",
-      "robinhood_tradable": null
-    },
-    {
-      "symbol": "QFIN",
-      "price": 15.97,
-      "change_pct": 26.88,
-      "volume": 5997553,
-      "exchange": "?",
-      "robinhood_tradable": null
-    },
-    {
-      "symbol": "AEMD",
-      "price": 3.08,
-      "change_pct": 25.77,
-      "volume": 15105537,
+      "price": 11.88,
+      "change_pct": 30.84,
+      "volume": 27900,
       "exchange": "?",
       "robinhood_tradable": null
     },
     {
       "symbol": "TOPP",
-      "price": 1.32,
-      "change_pct": 24.53,
-      "volume": 2083330,
+      "price": 1.38,
+      "change_pct": 30.19,
+      "volume": 2101601,
+      "exchange": "?",
+      "robinhood_tradable": null
+    },
+    {
+      "symbol": "DY",
+      "price": 532.98,
+      "change_pct": 26.76,
+      "volume": 994529,
+      "exchange": "?",
+      "robinhood_tradable": null
+    },
+    {
+      "symbol": "QFIN",
+      "price": 15.92,
+      "change_pct": 26.44,
+      "volume": 6067827,
+      "exchange": "?",
+      "robinhood_tradable": null
+    },
+    {
+      "symbol": "ASTI",
+      "price": 7.02,
+      "change_pct": 24.47,
+      "volume": 5616383,
+      "exchange": "?",
+      "robinhood_tradable": null
+    },
+    {
+      "symbol": "MNTS",
+      "price": 19.21,
+      "change_pct": 24.1,
+      "volume": 40798567,
       "exchange": "?",
       "robinhood_tradable": null
     }
