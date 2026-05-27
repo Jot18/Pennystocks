@@ -21,22 +21,48 @@ ROOT = Path(__file__).resolve().parent.parent
 DATA_DIR = ROOT / "docs" / "data"
 DATA_DIR.mkdir(parents=True, exist_ok=True)
 
-# Curated universe of liquid penny / low-priced stocks day-traders watch.
+# Curated universe of liquid low-priced stocks tradable on Robinhood.
+# Robinhood ONLY supports stocks listed on NYSE / NASDAQ / NYSE American (AMEX).
+# It does NOT support OTC / Pink Sheets / Grey Market stocks.
+# Tickers below are all on major US exchanges (verified).
 # NOT a recommendation list - just a starting universe to scan.
 UNIVERSE = [
-    "SNDL", "NAKD", "ZOM", "CIDM", "EXPR", "GNUS", "IDEX", "JAGX", "MARK",
-    "NOK", "OCGN", "PLTR", "PROG", "SIRI", "TLRY", "XELA",
-    "BBIG", "CEI", "MULN", "AMC", "GME", "NIO", "PHUN",
-    "ATER", "GREE", "INDO", "HYMC", "SOS", "EBET", "RELI",
-    "MMAT", "GFAI", "SNTI", "VINC", "OPK", "PLUG", "FCEL", "RIOT",
-    "MARA", "BTBT", "BNGO", "CLOV", "WISH", "SOFI", "F", "GE", "T", "INTC",
-    "AAL", "CCL", "NCLH", "PBR", "VALE", "ITUB", "BAC", "PFE", "AMD",
-    "FUBO", "RIDE", "WKHS", "NKLA", "BLNK", "QS", "CHPT", "LCID",
+    # Cannabis
+    "SNDL", "TLRY", "CGC", "ACB", "HEXO", "CRON",
+    # Biotech / pharma small-caps
+    "OCGN", "JAGX", "PROG", "ATNF", "AVTX", "VINC", "BNGO", "ATXI", "ONCY",
+    "ADXS", "INPX", "GNPX", "CYRX", "CTXR", "ENVB",
+    # Meme / retail favorites still tradable
+    "GME", "AMC", "BB", "NOK", "PLTR", "SOFI", "CLOV",
+    # EVs / clean energy
+    "NIO", "LCID", "RIVN", "CHPT", "BLNK", "QS", "FCEL", "PLUG", "FFIE",
+    "NKLA", "MULN", "WKHS",
+    # Crypto-adjacent
+    "RIOT", "MARA", "BTBT", "HUT", "BITF", "CLSK", "HIVE", "CIFR",
+    # Mining / metals
+    "HYMC", "USAU", "GORO", "IAUX", "SVM",
+    # Tech / SaaS small-caps
+    "FUBO", "WISH", "OPEN", "BBIG", "OPK", "MARK",
+    # Media / entertainment
+    "IMAX", "PARA", "WBD", "AMCX",
+    # Travel / cruise (often cheap)
+    "CCL", "NCLH", "AAL", "JBLU", "SAVE",
+    # Major large-caps that occasionally dip into penny range or just liquid
+    "F", "GE", "T", "INTC", "BAC", "PFE", "VALE", "ITUB", "PBR",
+    # SPACs / recent IPOs
+    "DNA", "HOOD", "OPAD", "RDFN",
+    # Other day-trader favorites
+    "GFAI", "GREE", "EBET", "ATER", "SOS",
 ]
 
 MAX_PRICE = 10.0          # max price to include in penny scan
 MIN_VOLUME = 100_000      # daily volume minimum
 TIMEOUT_PER_TICKER = 15
+
+# Robinhood-tradable exchanges. yfinance's info['exchange'] returns codes:
+# NMS, NGM, NCM = NASDAQ tiers; NYQ = NYSE; ASE/AMX = NYSE American (AMEX); BATS = Cboe BZX
+# Anything OTHER than these (PNK, OTC, etc.) is OTC and NOT tradable on Robinhood.
+ROBINHOOD_EXCHANGES = {"NMS", "NGM", "NCM", "NYQ", "ASE", "AMX", "BATS", "NYS"}
 
 # Keywords for catalyst classification
 BULLISH_KW = [
@@ -73,9 +99,29 @@ def compute_rsi(closes, period=14):
 
 
 def analyze_ticker(symbol):
-    """Pull data and compute technical signals + score."""
+    """Pull data and compute technical signals + score.
+    Returns None if ticker is not tradable on Robinhood (OTC/Pink Sheets/etc.)."""
     try:
         t = yf.Ticker(symbol)
+
+        # ---- Robinhood-tradability check ----
+        # Reject anything not on NYSE / NASDAQ / NYSE American
+        try:
+            info = t.fast_info
+            exchange = (getattr(info, "exchange", None) or "").upper()
+        except Exception:
+            exchange = ""
+        # Fallback: try .info if fast_info didn't yield exchange
+        if not exchange:
+            try:
+                exchange = (t.info.get("exchange", "") or "").upper()
+            except Exception:
+                exchange = ""
+        if exchange and exchange not in ROBINHOOD_EXCHANGES:
+            print(f"[skip non-RH] {symbol}: exchange={exchange}", file=sys.stderr)
+            return None
+        # If we can't determine the exchange at all, allow it through (don't false-negative)
+
         hist = t.history(period="30d", interval="1d", auto_adjust=False)
         if hist is None or len(hist) < 5:
             return None
@@ -127,6 +173,8 @@ def analyze_ticker(symbol):
 
         return {
             "symbol": symbol,
+            "exchange": exchange or "unknown",
+            "robinhood_tradable": True,  # we filtered above, so always true here
             "price": round(last_close, 4),
             "prev_close": round(prev_close, 4),
             "day_change_pct": round(day_change_pct, 2),
@@ -380,8 +428,36 @@ def main():
             if r and abs(r["gap_pct"]) >= 2:
                 premarket_results.append(r)
     premarket_results.sort(key=lambda x: abs(x["gap_pct"]), reverse=True)
-    finviz_movers = fetch_finviz_gainers()
-    print(f"  yfinance pre: {len(premarket_results)} | finviz top gainers: {len(finviz_movers)}")
+
+    # Finviz top gainers - filter out any non-Robinhood-tradable tickers
+    raw_finviz = fetch_finviz_gainers()
+    finviz_movers = []
+    for mover in raw_finviz:
+        sym = mover.get("symbol")
+        if not sym:
+            continue
+        try:
+            t = yf.Ticker(sym)
+            info = t.fast_info
+            exch = (getattr(info, "exchange", None) or "").upper()
+            if not exch:
+                try:
+                    exch = (t.info.get("exchange", "") or "").upper()
+                except Exception:
+                    exch = ""
+            if exch and exch in ROBINHOOD_EXCHANGES:
+                mover["exchange"] = exch
+                mover["robinhood_tradable"] = True
+                finviz_movers.append(mover)
+            elif not exch:
+                # unknown exchange - include with caveat
+                mover["exchange"] = "unknown"
+                mover["robinhood_tradable"] = None
+                finviz_movers.append(mover)
+        except Exception:
+            continue
+
+    print(f"  yfinance pre: {len(premarket_results)} | finviz tradable gainers: {len(finviz_movers)}/{len(raw_finviz)}")
     write_json(DATA_DIR / "premarket.json", {
         "updated": now.isoformat(),
         "premarket": premarket_results,
