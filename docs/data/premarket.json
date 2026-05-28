@@ -1,211 +1,202 @@
 {
-  "updated": "2026-05-28T12:32:41.931094+00:00",
+  "updated": "2026-05-28T16:57:17.231414+00:00",
   "premarket": [
     {
       "symbol": "JAGX",
-      "pre_price": 3.0,
+      "pre_price": 3.01,
       "prev_close": 3.12,
-      "gap_pct": -3.85,
+      "gap_pct": -3.53,
       "pre_high": 3.113,
       "pre_low": 2.91,
       "pre_volume": 0
     },
     {
       "symbol": "HIVE",
-      "pre_price": 4.45,
+      "pre_price": 4.42,
       "prev_close": 4.57,
-      "gap_pct": -2.63,
+      "gap_pct": -3.28,
       "pre_high": 4.5432,
       "pre_low": 4.32,
       "pre_volume": 0
     },
     {
-      "symbol": "BTBT",
-      "pre_price": 1.96,
-      "prev_close": 2.01,
-      "gap_pct": -2.49,
-      "pre_high": 1.985,
-      "pre_low": 1.92,
+      "symbol": "JBLU",
+      "pre_price": 5.25,
+      "prev_close": 5.4061,
+      "gap_pct": -2.89,
+      "pre_high": 5.3991,
+      "pre_low": 5.25,
       "pre_volume": 0
     },
     {
-      "symbol": "AMC",
-      "pre_price": 1.55,
-      "prev_close": 1.5894,
-      "gap_pct": -2.48,
-      "pre_high": 1.58,
-      "pre_low": 1.55,
-      "pre_volume": 0
-    },
-    {
-      "symbol": "CHPT",
-      "pre_price": 7.6221,
-      "prev_close": 7.8,
-      "gap_pct": -2.28,
-      "pre_high": 7.79,
-      "pre_low": 7.45,
+      "symbol": "OPEN",
+      "pre_price": 4.69,
+      "prev_close": 4.7999,
+      "gap_pct": -2.29,
+      "pre_high": 4.8001,
+      "pre_low": 4.67,
       "pre_volume": 0
     }
   ],
   "top_gainers": [
     {
-      "symbol": "ASTC",
-      "price": 13.81,
-      "change_pct": 459.11,
-      "volume": 146342496,
+      "symbol": "MASK",
+      "price": 4.51,
+      "change_pct": 226.81,
+      "volume": 120990162,
       "exchange": "NCM",
       "robinhood_tradable": true
     },
     {
-      "symbol": "QTTB",
-      "price": 12.85,
-      "change_pct": 81.24,
-      "volume": 21152558,
+      "symbol": "SPRC",
+      "price": 11.3,
+      "change_pct": 157.4,
+      "volume": 29615072,
       "exchange": "NCM",
       "robinhood_tradable": true
     },
     {
-      "symbol": "BRTX",
-      "price": 0.43,
-      "change_pct": 73.3,
-      "volume": 514089856,
+      "symbol": "ATPC",
+      "price": 6.05,
+      "change_pct": 112.42,
+      "volume": 37971503,
       "exchange": "NCM",
       "robinhood_tradable": true
     },
     {
-      "symbol": "AIM",
-      "price": 0.4,
-      "change_pct": 72.37,
-      "volume": 496390752,
+      "symbol": "UMAC",
+      "price": 31.38,
+      "change_pct": 66.67,
+      "volume": 35018842,
       "exchange": "ASE",
       "robinhood_tradable": true
     },
     {
-      "symbol": "SNGX",
-      "price": 0.87,
-      "change_pct": 68.75,
-      "volume": 246553712,
+      "symbol": "FATN",
+      "price": 7.79,
+      "change_pct": 61.62,
+      "volume": 3494883,
       "exchange": "NCM",
       "robinhood_tradable": true
     },
     {
-      "symbol": "VCIG",
-      "price": 4.78,
-      "change_pct": 64.83,
-      "volume": 22925848,
+      "symbol": "CODX",
+      "price": 11.61,
+      "change_pct": 59.04,
+      "volume": 15578877,
       "exchange": "NCM",
       "robinhood_tradable": true
     },
     {
-      "symbol": "AMSS",
-      "price": 5.7,
-      "change_pct": 59.22,
-      "volume": 17344008,
-      "exchange": "NGM",
-      "robinhood_tradable": true
-    },
-    {
-      "symbol": "NCPL",
-      "price": 1.58,
-      "change_pct": 47.2,
-      "volume": 28460190,
+      "symbol": "NCT",
+      "price": 3.77,
+      "change_pct": 53.94,
+      "volume": 31788402,
       "exchange": "NCM",
       "robinhood_tradable": true
     },
     {
-      "symbol": "VTIX",
-      "price": 4.39,
-      "change_pct": 46.33,
-      "volume": 7029659,
-      "exchange": "NGM",
-      "robinhood_tradable": true
-    },
-    {
-      "symbol": "TOPP",
-      "price": 1.54,
-      "change_pct": 45.28,
-      "volume": 2503399,
-      "exchange": "ASE",
-      "robinhood_tradable": true
-    },
-    {
-      "symbol": "FGL",
-      "price": 2.64,
-      "change_pct": 40.43,
-      "volume": 35627552,
-      "exchange": "NCM",
-      "robinhood_tradable": true
-    },
-    {
-      "symbol": "APPS",
-      "price": 6.68,
-      "change_pct": 38.88,
-      "volume": 54812844,
+      "symbol": "AKTX",
+      "price": 24.23,
+      "change_pct": 52.15,
+      "volume": 1339144,
       "exchange": "NCM",
       "robinhood_tradable": true
     },
     {
       "symbol": "QTEX",
-      "price": 2.1,
-      "change_pct": 38.16,
-      "volume": 79241304,
+      "price": 3.06,
+      "change_pct": 45.48,
+      "volume": 63245344,
       "exchange": "NCM",
       "robinhood_tradable": true
     },
     {
-      "symbol": "RYOJ",
-      "price": 5.15,
-      "change_pct": 33.77,
-      "volume": 3572661,
+      "symbol": "TOPP",
+      "price": 2.2,
+      "change_pct": 42.86,
+      "volume": 871895,
+      "exchange": "ASE",
+      "robinhood_tradable": true
+    },
+    {
+      "symbol": "RCAT",
+      "price": 14.81,
+      "change_pct": 38.75,
+      "volume": 49971110,
       "exchange": "NCM",
       "robinhood_tradable": true
     },
     {
-      "symbol": "FRGT",
-      "price": 4.89,
-      "change_pct": 32.52,
-      "volume": 227225,
+      "symbol": "TURB",
+      "price": 1.44,
+      "change_pct": 37.14,
+      "volume": 2223974,
       "exchange": "NCM",
       "robinhood_tradable": true
     },
     {
-      "symbol": "IPWR",
-      "price": 8.99,
-      "change_pct": 29.91,
-      "volume": 8729438,
-      "exchange": "NCM",
-      "robinhood_tradable": true
-    },
-    {
-      "symbol": "MNTS",
-      "price": 19.5,
-      "change_pct": 25.97,
-      "volume": 44348028,
-      "exchange": "NCM",
-      "robinhood_tradable": true
-    },
-    {
-      "symbol": "DY",
-      "price": 529.13,
-      "change_pct": 25.84,
-      "volume": 1495836,
+      "symbol": "SNOW",
+      "price": 239.16,
+      "change_pct": 36.46,
+      "volume": 27095985,
       "exchange": "NYQ",
       "robinhood_tradable": true
     },
     {
-      "symbol": "AEMD",
-      "price": 3.07,
-      "change_pct": 25.31,
-      "volume": 16046091,
+      "symbol": "BRAI",
+      "price": 14.66,
+      "change_pct": 35.87,
+      "volume": 680368,
+      "exchange": "NGM",
+      "robinhood_tradable": true
+    },
+    {
+      "symbol": "ASTC",
+      "price": 18.67,
+      "change_pct": 35.16,
+      "volume": 27007545,
       "exchange": "NCM",
       "robinhood_tradable": true
     },
     {
-      "symbol": "QFIN",
-      "price": 15.74,
-      "change_pct": 25.02,
-      "volume": 7355808,
-      "exchange": "NMS",
+      "symbol": "BRR",
+      "price": 2.16,
+      "change_pct": 33.33,
+      "volume": 7750897,
+      "exchange": "NGM",
+      "robinhood_tradable": true
+    },
+    {
+      "symbol": "LNKS",
+      "price": 1.84,
+      "change_pct": 32.97,
+      "volume": 5198323,
+      "exchange": "NCM",
+      "robinhood_tradable": true
+    },
+    {
+      "symbol": "CHRN",
+      "price": 19.29,
+      "change_pct": 30.01,
+      "volume": 903947,
+      "exchange": "NCM",
+      "robinhood_tradable": true
+    },
+    {
+      "symbol": "CUPR",
+      "price": 2.86,
+      "change_pct": 29.12,
+      "volume": 982633,
+      "exchange": "NCM",
+      "robinhood_tradable": true
+    },
+    {
+      "symbol": "WGRX",
+      "price": 4.01,
+      "change_pct": 27.06,
+      "volume": 9198754,
+      "exchange": "NCM",
       "robinhood_tradable": true
     }
   ]
