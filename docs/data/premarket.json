@@ -1,5 +1,5 @@
 {
-  "updated": "2026-05-28T16:57:17.231414+00:00",
+  "updated": "2026-05-28T19:40:50.915980+00:00",
   "premarket": [
     {
       "symbol": "JAGX",
@@ -41,161 +41,161 @@
   "top_gainers": [
     {
       "symbol": "MASK",
-      "price": 4.51,
-      "change_pct": 226.81,
-      "volume": 120990162,
+      "price": 4.25,
+      "change_pct": 207.86,
+      "volume": 142893797,
       "exchange": "NCM",
       "robinhood_tradable": true
     },
     {
       "symbol": "SPRC",
-      "price": 11.3,
-      "change_pct": 157.4,
-      "volume": 29615072,
+      "price": 11.74,
+      "change_pct": 167.42,
+      "volume": 33739426,
       "exchange": "NCM",
       "robinhood_tradable": true
     },
     {
       "symbol": "ATPC",
-      "price": 6.05,
-      "change_pct": 112.42,
-      "volume": 37971503,
+      "price": 6.61,
+      "change_pct": 131.75,
+      "volume": 52356164,
+      "exchange": "NCM",
+      "robinhood_tradable": true
+    },
+    {
+      "symbol": "ASTC",
+      "price": 30.21,
+      "change_pct": 118.76,
+      "volume": 40972430,
       "exchange": "NCM",
       "robinhood_tradable": true
     },
     {
       "symbol": "UMAC",
-      "price": 31.38,
-      "change_pct": 66.67,
-      "volume": 35018842,
+      "price": 30.47,
+      "change_pct": 61.8,
+      "volume": 44584068,
       "exchange": "ASE",
       "robinhood_tradable": true
     },
     {
-      "symbol": "FATN",
-      "price": 7.79,
-      "change_pct": 61.62,
-      "volume": 3494883,
-      "exchange": "NCM",
-      "robinhood_tradable": true
-    },
-    {
       "symbol": "CODX",
-      "price": 11.61,
-      "change_pct": 59.04,
-      "volume": 15578877,
-      "exchange": "NCM",
-      "robinhood_tradable": true
-    },
-    {
-      "symbol": "NCT",
-      "price": 3.77,
-      "change_pct": 53.94,
-      "volume": 31788402,
-      "exchange": "NCM",
-      "robinhood_tradable": true
-    },
-    {
-      "symbol": "AKTX",
-      "price": 24.23,
-      "change_pct": 52.15,
-      "volume": 1339144,
-      "exchange": "NCM",
-      "robinhood_tradable": true
-    },
-    {
-      "symbol": "QTEX",
-      "price": 3.06,
-      "change_pct": 45.48,
-      "volume": 63245344,
+      "price": 11.77,
+      "change_pct": 61.3,
+      "volume": 18316104,
       "exchange": "NCM",
       "robinhood_tradable": true
     },
     {
       "symbol": "TOPP",
-      "price": 2.2,
-      "change_pct": 42.86,
-      "volume": 871895,
+      "price": 2.47,
+      "change_pct": 60.4,
+      "volume": 3463125,
       "exchange": "ASE",
       "robinhood_tradable": true
     },
     {
-      "symbol": "RCAT",
-      "price": 14.81,
-      "change_pct": 38.75,
-      "volume": 49971110,
+      "symbol": "NCT",
+      "price": 3.88,
+      "change_pct": 58.16,
+      "volume": 33261555,
       "exchange": "NCM",
       "robinhood_tradable": true
     },
     {
-      "symbol": "TURB",
-      "price": 1.44,
-      "change_pct": 37.14,
-      "volume": 2223974,
+      "symbol": "FATN",
+      "price": 7.54,
+      "change_pct": 56.43,
+      "volume": 4267629,
       "exchange": "NCM",
       "robinhood_tradable": true
     },
     {
-      "symbol": "SNOW",
-      "price": 239.16,
-      "change_pct": 36.46,
-      "volume": 27095985,
-      "exchange": "NYQ",
+      "symbol": "QTEX",
+      "price": 3.14,
+      "change_pct": 49.52,
+      "volume": 95529425,
+      "exchange": "NCM",
       "robinhood_tradable": true
     },
     {
       "symbol": "BRAI",
-      "price": 14.66,
-      "change_pct": 35.87,
-      "volume": 680368,
+      "price": 16.01,
+      "change_pct": 48.38,
+      "volume": 1135586,
       "exchange": "NGM",
       "robinhood_tradable": true
     },
     {
-      "symbol": "ASTC",
-      "price": 18.67,
-      "change_pct": 35.16,
-      "volume": 27007545,
+      "symbol": "AKTX",
+      "price": 23.51,
+      "change_pct": 47.66,
+      "volume": 1569627,
       "exchange": "NCM",
       "robinhood_tradable": true
     },
     {
       "symbol": "BRR",
-      "price": 2.16,
-      "change_pct": 33.33,
-      "volume": 7750897,
+      "price": 2.32,
+      "change_pct": 42.9,
+      "volume": 14353681,
       "exchange": "NGM",
       "robinhood_tradable": true
     },
     {
-      "symbol": "LNKS",
-      "price": 1.84,
-      "change_pct": 32.97,
-      "volume": 5198323,
-      "exchange": "NCM",
-      "robinhood_tradable": true
-    },
-    {
-      "symbol": "CHRN",
-      "price": 19.29,
-      "change_pct": 30.01,
-      "volume": 903947,
-      "exchange": "NCM",
-      "robinhood_tradable": true
-    },
-    {
       "symbol": "CUPR",
-      "price": 2.86,
-      "change_pct": 29.12,
-      "volume": 982633,
+      "price": 3.16,
+      "change_pct": 42.84,
+      "volume": 1084092,
       "exchange": "NCM",
       "robinhood_tradable": true
     },
     {
-      "symbol": "WGRX",
-      "price": 4.01,
-      "change_pct": 27.06,
-      "volume": 9198754,
+      "symbol": "SNOW",
+      "price": 242.87,
+      "change_pct": 38.58,
+      "volume": 33844606,
+      "exchange": "NYQ",
+      "robinhood_tradable": true
+    },
+    {
+      "symbol": "TURB",
+      "price": 1.43,
+      "change_pct": 36.67,
+      "volume": 2719368,
+      "exchange": "NCM",
+      "robinhood_tradable": true
+    },
+    {
+      "symbol": "RKTO",
+      "price": 1.83,
+      "change_pct": 34.55,
+      "volume": 87518695,
+      "exchange": "NGM",
+      "robinhood_tradable": true
+    },
+    {
+      "symbol": "RCAT",
+      "price": 14.35,
+      "change_pct": 34.44,
+      "volume": 68871522,
+      "exchange": "NCM",
+      "robinhood_tradable": true
+    },
+    {
+      "symbol": "LNKS",
+      "price": 1.85,
+      "change_pct": 34.06,
+      "volume": 5855160,
+      "exchange": "NCM",
+      "robinhood_tradable": true
+    },
+    {
+      "symbol": "DAIO",
+      "price": 4.17,
+      "change_pct": 30.72,
+      "volume": 847825,
       "exchange": "NCM",
       "robinhood_tradable": true
     }
