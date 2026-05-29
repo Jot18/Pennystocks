@@ -1,5 +1,5 @@
 {
-  "updated": "2026-05-29T16:24:15.723696+00:00",
+  "updated": "2026-05-29T19:11:00.650104+00:00",
   "count": 75,
   "items": [
     {
@@ -50,6 +50,15 @@
       "matched_keywords": []
     },
     {
+      "symbol": "HIVE",
+      "title": "IREN Is Flipping the Switch from Bitcoin to AI",
+      "url": "https://www.marketbeat.com/originals/iren-is-flipping-the-switch-from-bitcoin-to-ai/?utm_source=yahoofinance&utm_medium=yahoofinance",
+      "source": "MarketBeat",
+      "published": "2026-05-28T16:45:00Z",
+      "sentiment": "neutral",
+      "matched_keywords": []
+    },
+    {
       "symbol": "OPK",
       "title": "OPKO Health (OPK) Up 17.1% Since Last Earnings Report: Can It Continue?",
       "url": "https://finance.yahoo.com/sectors/healthcare/articles/opko-health-opk-17-1-153015667.html",
@@ -82,15 +91,6 @@
       "url": "https://finance.yahoo.com/markets/stocks/articles/why-fast-paced-mover-bionano-125502612.html",
       "source": "Zacks",
       "published": "2026-05-28T12:55:02Z",
-      "sentiment": "neutral",
-      "matched_keywords": []
-    },
-    {
-      "symbol": "LCID",
-      "title": "Q1 Earnings Roundup: Lucid (NASDAQ:LCID) And The Rest Of The Automobile Manufacturing Segment",
-      "url": "https://finance.yahoo.com/markets/stocks/articles/q1-earnings-roundup-lucid-nasdaq-124627020.html",
-      "source": "StockStory",
-      "published": "2026-05-28T12:46:27Z",
       "sentiment": "neutral",
       "matched_keywords": []
     },
@@ -158,24 +158,6 @@
       "matched_keywords": []
     },
     {
-      "symbol": "LCID",
-      "title": "Lucid, Goodyear, and Autoliv Shares Are Soaring, What You Need To Know",
-      "url": "https://finance.yahoo.com/markets/stocks/articles/lucid-goodyear-autoliv-shares-soaring-214328888.html",
-      "source": "StockStory",
-      "published": "2026-05-26T21:43:28Z",
-      "sentiment": "neutral",
-      "matched_keywords": []
-    },
-    {
-      "symbol": "LCID",
-      "title": "Is Uber\u2019s Expanded US$500 Million Robotaxi Deal Altering The Investment Case For Lucid Group (LCID)?",
-      "url": "https://finance.yahoo.com/markets/stocks/articles/uber-expanded-us-500-million-170920359.html",
-      "source": "Simply Wall St.",
-      "published": "2026-05-26T17:09:20Z",
-      "sentiment": "neutral",
-      "matched_keywords": []
-    },
-    {
       "symbol": "BTBT",
       "title": "Staking Now Drives 60% of Revenue at Ethereum Treasury Firms",
       "url": "https://beincrypto.com/staking-ethereum-treasury-revenue-study/",
@@ -217,15 +199,6 @@
       "url": "https://finance.yahoo.com/markets/stocks/articles/may-2026s-promising-penny-stocks-180530510.html",
       "source": "Simply Wall St.",
       "published": "2026-05-25T18:05:30Z",
-      "sentiment": "neutral",
-      "matched_keywords": []
-    },
-    {
-      "symbol": "LCID",
-      "title": "1 Growth Stock to Add to Your Roster and 2 We Turn Down",
-      "url": "https://finance.yahoo.com/markets/stocks/articles/1-growth-stock-add-roster-130751392.html",
-      "source": "StockStory",
-      "published": "2026-05-25T13:07:51Z",
       "sentiment": "neutral",
       "matched_keywords": []
     },
@@ -277,15 +250,6 @@
       "matched_keywords": []
     },
     {
-      "symbol": "LCID",
-      "title": "3 Small-Cap Stocks with Questionable Fundamentals",
-      "url": "https://finance.yahoo.com/markets/stocks/articles/3-small-cap-stocks-questionable-154055744.html",
-      "source": "StockStory",
-      "published": "2026-05-23T15:40:55Z",
-      "sentiment": "neutral",
-      "matched_keywords": []
-    },
-    {
       "symbol": "HIVE",
       "title": "MarketBeat Week in Review \u2013 05/18 - 05/22",
       "url": "https://www.marketbeat.com/originals/marketbeat-week-in-review-05-18-05-22/?utm_source=yahoofinance&utm_medium=yahoofinance",
@@ -322,7 +286,7 @@
       "matched_keywords": []
     },
     {
-      "symbol": "SNDL",
+      "symbol": "ACB",
       "title": "Should You Buy CGC Stock After Marijuana Reclassification?",
       "url": "https://finance.yahoo.com/markets/stocks/articles/buy-cgc-stock-marijuana-reclassification-121900234.html",
       "source": "Zacks",
@@ -331,7 +295,7 @@
       "matched_keywords": []
     },
     {
-      "symbol": "ACB",
+      "symbol": "SNDL",
       "title": "Should You Buy CGC Stock After Marijuana Reclassification?",
       "url": "https://finance.yahoo.com/markets/stocks/articles/buy-cgc-stock-marijuana-reclassification-121900234.html",
       "source": "Zacks",
@@ -354,15 +318,6 @@
       "url": "https://finance.yahoo.com/markets/stocks/articles/heres-why-retain-opk-stock-162300386.html",
       "source": "Zacks",
       "published": "2026-05-21T16:23:00Z",
-      "sentiment": "neutral",
-      "matched_keywords": []
-    },
-    {
-      "symbol": "HIVE",
-      "title": "Bitcoin Miner Stocks Rise After Nvidia\u2019s Blockbuster Earnings",
-      "url": "https://www.cryptoprowl.com/releases/bitcoin-miner-stocks-rise-after-nvidias-blockbuster-earnings-5570",
-      "source": "CryptoProwl",
-      "published": "2026-05-21T13:17:00Z",
       "sentiment": "neutral",
       "matched_keywords": []
     },
@@ -522,6 +477,15 @@
       "matched_keywords": []
     },
     {
+      "symbol": "OCGN",
+      "title": "Ocugen (OCGN) Reports Q1 EPS",
+      "url": "https://finance.yahoo.com/news/ocugen-ocgn-reports-q1-eps-062109360.html",
+      "source": "Insider Monkey",
+      "published": "2026-05-13T06:21:09Z",
+      "sentiment": "neutral",
+      "matched_keywords": []
+    },
+    {
       "symbol": "CRON",
       "title": "Cronos Group Inc (CRON) Q1 2026 Earnings Call Highlights: Record Revenue and Strategic Growth ...",
       "url": "https://finance.yahoo.com/markets/stocks/articles/cronos-group-inc-cron-q1-070312197.html",
@@ -560,6 +524,26 @@
       "matched_keywords": []
     },
     {
+      "symbol": "OCGN",
+      "title": "Ocugen (OCGN) Is Down 16.8% After $115M Convertible Notes Deal And Wider Q1 Losses Has The Bull Case Changed?",
+      "url": "https://finance.yahoo.com/markets/stocks/articles/ocugen-ocgn-down-16-8-002818479.html",
+      "source": "Simply Wall St.",
+      "published": "2026-05-09T00:28:18Z",
+      "sentiment": "neutral",
+      "matched_keywords": []
+    },
+    {
+      "symbol": "OCGN",
+      "title": "Ocugen (OCGN) Upgraded to Buy: Here's Why",
+      "url": "https://finance.yahoo.com/markets/stocks/articles/ocugen-ocgn-upgraded-buy-heres-160006394.html",
+      "source": "Zacks",
+      "published": "2026-05-08T16:00:06Z",
+      "sentiment": "bullish",
+      "matched_keywords": [
+        "upgrade"
+      ]
+    },
+    {
       "symbol": "SNDL",
       "title": "Undervalued Small Caps With Insider Buying Opportunities In May 2026",
       "url": "https://finance.yahoo.com/markets/stocks/articles/undervalued-small-caps-insider-buying-113952820.html",
@@ -571,11 +555,11 @@
       ]
     },
     {
-      "symbol": "SNDL",
-      "title": "Should SNDL Stock Be in Your Portfolio Post Q1 Earnings?",
-      "url": "https://finance.yahoo.com/markets/stocks/articles/sndl-stock-portfolio-post-q1-123800896.html",
+      "symbol": "OCGN",
+      "title": "OCGN Falls on Wider Q1 Loss Despite Strong Pipeline Progress Outlook",
+      "url": "https://finance.yahoo.com/sectors/healthcare/articles/ocgn-falls-wider-q1-loss-160100444.html",
       "source": "Zacks",
-      "published": "2026-05-06T12:38:00Z",
+      "published": "2026-05-06T16:01:00Z",
       "sentiment": "neutral",
       "matched_keywords": []
     },
@@ -590,6 +574,24 @@
     },
     {
       "symbol": "SNDL",
+      "title": "Should SNDL Stock Be in Your Portfolio Post Q1 Earnings?",
+      "url": "https://finance.yahoo.com/markets/stocks/articles/sndl-stock-portfolio-post-q1-123800896.html",
+      "source": "Zacks",
+      "published": "2026-05-06T12:38:00Z",
+      "sentiment": "neutral",
+      "matched_keywords": []
+    },
+    {
+      "symbol": "OCGN",
+      "title": "Ocugen Q1 Earnings Call Highlights",
+      "url": "https://www.marketbeat.com/instant-alerts/ocugen-q1-earnings-call-highlights-2026-05-05/?utm_source=yahoofinance&utm_medium=yahoofinance",
+      "source": "MarketBeat",
+      "published": "2026-05-05T19:27:19Z",
+      "sentiment": "neutral",
+      "matched_keywords": []
+    },
+    {
+      "symbol": "ACB",
       "title": "Weekly Roundup on the Cannabis Sector & Psychedelic Sector",
       "url": "https://finance.yahoo.com/sectors/healthcare/articles/weekly-roundup-cannabis-sector-psychedelic-151124959.html",
       "source": "Market Exclusive",
@@ -598,7 +600,7 @@
       "matched_keywords": []
     },
     {
-      "symbol": "ACB",
+      "symbol": "SNDL",
       "title": "Weekly Roundup on the Cannabis Sector & Psychedelic Sector",
       "url": "https://finance.yahoo.com/sectors/healthcare/articles/weekly-roundup-cannabis-sector-psychedelic-151124959.html",
       "source": "Market Exclusive",
