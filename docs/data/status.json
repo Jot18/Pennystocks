@@ -1,8 +1,8 @@
 {
-  "updated": "2026-05-29T12:19:34.120840+00:00",
+  "updated": "2026-05-29T16:24:15.723696+00:00",
   "universe_size": 56,
   "scan_matches": 23,
-  "premarket_movers": 5,
+  "premarket_movers": 4,
   "news_items": 75,
   "next_run": "every hour during market days (cron in workflow)"
 }

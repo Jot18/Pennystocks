@@ -1,7 +1,16 @@
 {
-  "updated": "2026-05-29T12:19:34.120840+00:00",
+  "updated": "2026-05-29T16:24:15.723696+00:00",
   "count": 75,
   "items": [
+    {
+      "symbol": "AMC",
+      "title": "If Spider-Man Wins 2026\u2019s Box Office Crown, These Stocks Win Too",
+      "url": "https://247wallst.com/investing/2026/05/29/if-spider-man-wins-2026s-box-office-crown-these-stocks-win-too/",
+      "source": "24/7 Wall St.",
+      "published": "2026-05-29T12:50:03Z",
+      "sentiment": "neutral",
+      "matched_keywords": []
+    },
     {
       "symbol": "CLOV",
       "title": "2 Healthcare Stocks with Exciting Potential and 1 Facing Challenges",
@@ -77,20 +86,20 @@
       "matched_keywords": []
     },
     {
+      "symbol": "LCID",
+      "title": "Q1 Earnings Roundup: Lucid (NASDAQ:LCID) And The Rest Of The Automobile Manufacturing Segment",
+      "url": "https://finance.yahoo.com/markets/stocks/articles/q1-earnings-roundup-lucid-nasdaq-124627020.html",
+      "source": "StockStory",
+      "published": "2026-05-28T12:46:27Z",
+      "sentiment": "neutral",
+      "matched_keywords": []
+    },
+    {
       "symbol": "BTBT",
       "title": "Bit Digital originates $100M loan facility for WhiteFiber, adds $20M in Ethereum",
       "url": "https://www.proactiveinvestors.com/companies/news/1093048/bit-digital-originates-100m-loan-facility-for-whitefiber-adds-20m-in-ethereum-1093048.html",
       "source": "Proactive",
       "published": "2026-05-28T12:43:00Z",
-      "sentiment": "neutral",
-      "matched_keywords": []
-    },
-    {
-      "symbol": "CHPT",
-      "title": "BRP Inc. (DOO) Beats Q1 Earnings and Revenue Estimates",
-      "url": "https://finance.yahoo.com/markets/stocks/articles/brp-inc-doo-beats-q1-112501822.html",
-      "source": "Zacks",
-      "published": "2026-05-28T11:25:01Z",
       "sentiment": "neutral",
       "matched_keywords": []
     },
@@ -122,11 +131,47 @@
       "matched_keywords": []
     },
     {
+      "symbol": "HIVE",
+      "title": "RETRANSMISSION: HIVE Digital Technologies to Release Fiscal Q4 and Full Year 2026 Financial Results and Hold Earnings Call on June 2nd",
+      "url": "https://www.newsfilecorp.com/release/299019/RETRANSMISSION-HIVE-Digital-Technologies-to-Release-Fiscal-Q4-and-Full-Year-2026-Financial-Results-and-Hold-Earnings-Call-on-June-2nd",
+      "source": "Finviz",
+      "published": "2026-05-27T06:00:00Z",
+      "sentiment": "neutral",
+      "matched_keywords": []
+    },
+    {
       "symbol": "BB",
       "title": "NOK, MU, BB Stocks Hit 52-Week Highs Today: What's Fueling The Rally?",
       "url": "https://stocktwits.com/news-articles/markets/equity/nok-mu-bb-stocks-hit-52-week-highs-today-what-is-fueling-the-rally/cZgXwdPReA5",
       "source": "Stocktwits",
       "published": "2026-05-27T03:13:10Z",
+      "sentiment": "neutral",
+      "matched_keywords": []
+    },
+    {
+      "symbol": "HIVE",
+      "title": "HIVE Digital Technologies to Release Fiscal Q4 and Full Year 2026 Financial Results and Hold Earnings Call on June 2nd",
+      "url": "https://www.newsfilecorp.com/release/299018/HIVE-Digital-Technologies-to-Release-Fiscal-Q4-and-Full-Year-2026-Financial-Results-and-Hold-Earnings-Call-on-June-2nd",
+      "source": "Finviz",
+      "published": "2026-05-27T01:00:00Z",
+      "sentiment": "neutral",
+      "matched_keywords": []
+    },
+    {
+      "symbol": "LCID",
+      "title": "Lucid, Goodyear, and Autoliv Shares Are Soaring, What You Need To Know",
+      "url": "https://finance.yahoo.com/markets/stocks/articles/lucid-goodyear-autoliv-shares-soaring-214328888.html",
+      "source": "StockStory",
+      "published": "2026-05-26T21:43:28Z",
+      "sentiment": "neutral",
+      "matched_keywords": []
+    },
+    {
+      "symbol": "LCID",
+      "title": "Is Uber\u2019s Expanded US$500 Million Robotaxi Deal Altering The Investment Case For Lucid Group (LCID)?",
+      "url": "https://finance.yahoo.com/markets/stocks/articles/uber-expanded-us-500-million-170920359.html",
+      "source": "Simply Wall St.",
+      "published": "2026-05-26T17:09:20Z",
       "sentiment": "neutral",
       "matched_keywords": []
     },
@@ -172,6 +217,15 @@
       "url": "https://finance.yahoo.com/markets/stocks/articles/may-2026s-promising-penny-stocks-180530510.html",
       "source": "Simply Wall St.",
       "published": "2026-05-25T18:05:30Z",
+      "sentiment": "neutral",
+      "matched_keywords": []
+    },
+    {
+      "symbol": "LCID",
+      "title": "1 Growth Stock to Add to Your Roster and 2 We Turn Down",
+      "url": "https://finance.yahoo.com/markets/stocks/articles/1-growth-stock-add-roster-130751392.html",
+      "source": "StockStory",
+      "published": "2026-05-25T13:07:51Z",
       "sentiment": "neutral",
       "matched_keywords": []
     },
@@ -223,29 +277,20 @@
       "matched_keywords": []
     },
     {
+      "symbol": "LCID",
+      "title": "3 Small-Cap Stocks with Questionable Fundamentals",
+      "url": "https://finance.yahoo.com/markets/stocks/articles/3-small-cap-stocks-questionable-154055744.html",
+      "source": "StockStory",
+      "published": "2026-05-23T15:40:55Z",
+      "sentiment": "neutral",
+      "matched_keywords": []
+    },
+    {
       "symbol": "HIVE",
       "title": "MarketBeat Week in Review \u2013 05/18 - 05/22",
       "url": "https://www.marketbeat.com/originals/marketbeat-week-in-review-05-18-05-22/?utm_source=yahoofinance&utm_medium=yahoofinance",
       "source": "MarketBeat",
       "published": "2026-05-23T11:00:00Z",
-      "sentiment": "neutral",
-      "matched_keywords": []
-    },
-    {
-      "symbol": "AMC",
-      "title": "3 of Wall Street\u2019s Favorite Stocks That Fall Short",
-      "url": "https://finance.yahoo.com/markets/stocks/articles/3-wall-street-favorite-stocks-101255786.html",
-      "source": "StockStory",
-      "published": "2026-05-23T10:12:55Z",
-      "sentiment": "neutral",
-      "matched_keywords": []
-    },
-    {
-      "symbol": "CHPT",
-      "title": "ChargePoint Holdings, Inc. (CHPT) Outperforms Broader Market: What You Need to Know",
-      "url": "https://finance.yahoo.com/markets/stocks/articles/chargepoint-holdings-inc-chpt-outperforms-221501572.html",
-      "source": "Zacks",
-      "published": "2026-05-22T22:15:01Z",
       "sentiment": "neutral",
       "matched_keywords": []
     },
@@ -277,7 +322,7 @@
       "matched_keywords": []
     },
     {
-      "symbol": "ACB",
+      "symbol": "SNDL",
       "title": "Should You Buy CGC Stock After Marijuana Reclassification?",
       "url": "https://finance.yahoo.com/markets/stocks/articles/buy-cgc-stock-marijuana-reclassification-121900234.html",
       "source": "Zacks",
@@ -286,7 +331,7 @@
       "matched_keywords": []
     },
     {
-      "symbol": "SNDL",
+      "symbol": "ACB",
       "title": "Should You Buy CGC Stock After Marijuana Reclassification?",
       "url": "https://finance.yahoo.com/markets/stocks/articles/buy-cgc-stock-marijuana-reclassification-121900234.html",
       "source": "Zacks",
@@ -322,15 +367,6 @@
       "matched_keywords": []
     },
     {
-      "symbol": "HIVE",
-      "title": "HIVE Digital Technologies (TSX:HIVE) Is Up 38.5% After Unveiling C$3.5B AI Gigafactory Near Toronto",
-      "url": "https://finance.yahoo.com/markets/stocks/articles/hive-digital-technologies-tsx-hive-131540015.html",
-      "source": "Simply Wall St.",
-      "published": "2026-05-21T13:15:40Z",
-      "sentiment": "neutral",
-      "matched_keywords": []
-    },
-    {
       "symbol": "BTBT",
       "title": "Here is What to Know Beyond Why Bit Digital, Inc. (BTBT) is a Trending Stock",
       "url": "https://finance.yahoo.com/markets/stocks/articles/know-beyond-why-bit-digital-130004992.html",
@@ -345,15 +381,6 @@
       "url": "https://finance.yahoo.com/markets/stocks/articles/1-unpopular-stock-deserves-second-042855653.html",
       "source": "StockStory",
       "published": "2026-05-21T04:28:55Z",
-      "sentiment": "neutral",
-      "matched_keywords": []
-    },
-    {
-      "symbol": "HIVE",
-      "title": "Cantor Fitzgerald Boosts Price Target On HIVE Stock By 50%",
-      "url": "https://www.cryptoprowl.com/releases/cantor-fitzgerald-boosts-price-target-on-hive-stock-by-50-5558",
-      "source": "CryptoProwl",
-      "published": "2026-05-20T21:00:00Z",
       "sentiment": "neutral",
       "matched_keywords": []
     },
@@ -423,24 +450,6 @@
       "matched_keywords": []
     },
     {
-      "symbol": "CHPT",
-      "title": "ChargePoint Holdings, Inc. (CHPT) Suffers a Larger Drop Than the General Market: Key Insights",
-      "url": "https://finance.yahoo.com/markets/stocks/articles/chargepoint-holdings-inc-chpt-suffers-221501708.html",
-      "source": "Zacks",
-      "published": "2026-05-15T22:15:01Z",
-      "sentiment": "neutral",
-      "matched_keywords": []
-    },
-    {
-      "symbol": "CHPT",
-      "title": "1 Small-Cap Stock for Long-Term Investors and 2 We Avoid",
-      "url": "https://finance.yahoo.com/markets/stocks/articles/1-small-cap-stock-long-175655034.html",
-      "source": "StockStory",
-      "published": "2026-05-15T17:56:55Z",
-      "sentiment": "neutral",
-      "matched_keywords": []
-    },
-    {
       "symbol": "BLNK",
       "title": "BLNK Q1 Deep Dive: Recurring Revenue Growth and DC Fast Charging Expansion Shape Outlook",
       "url": "https://finance.yahoo.com/markets/stocks/articles/blnk-q1-deep-dive-recurring-164455723.html",
@@ -455,15 +464,6 @@
       "url": "https://finance.yahoo.com/markets/stocks/articles/why-quantumscape-qs-17-0-020956295.html",
       "source": "Simply Wall St.",
       "published": "2026-05-15T02:09:56Z",
-      "sentiment": "neutral",
-      "matched_keywords": []
-    },
-    {
-      "symbol": "CHPT",
-      "title": "Workhorse Group (WKHS) Reports Q1 Loss, Lags Revenue Estimates",
-      "url": "https://finance.yahoo.com/markets/stocks/articles/workhorse-group-wkhs-reports-q1-222004677.html",
-      "source": "Zacks",
-      "published": "2026-05-14T22:20:04Z",
       "sentiment": "neutral",
       "matched_keywords": []
     },
@@ -522,15 +522,6 @@
       "matched_keywords": []
     },
     {
-      "symbol": "OPK",
-      "title": "OPKO Health's ModeX Therapeutics Will Present Data Demonstrating In Vivo CAR-T Cell Generation and Deep B-Cell Depletion in Preclinical Studies",
-      "url": "/news/353359/opko-healths-modex-therapeutics-will-present-data-demonstrating-in-vivo-car-t-cell-generation-and-deep-b-cell-depletion-in-preclinical-studies",
-      "source": "Finviz",
-      "published": "2026-05-12T08:00:00Z",
-      "sentiment": "neutral",
-      "matched_keywords": []
-    },
-    {
       "symbol": "CRON",
       "title": "Cronos Group Inc (CRON) Q1 2026 Earnings Call Highlights: Record Revenue and Strategic Growth ...",
       "url": "https://finance.yahoo.com/markets/stocks/articles/cronos-group-inc-cron-q1-070312197.html",
@@ -580,15 +571,6 @@
       ]
     },
     {
-      "symbol": "ACB",
-      "title": "Should SNDL Stock Be in Your Portfolio Post Q1 Earnings?",
-      "url": "https://finance.yahoo.com/markets/stocks/articles/sndl-stock-portfolio-post-q1-123800896.html",
-      "source": "Zacks",
-      "published": "2026-05-06T12:38:00Z",
-      "sentiment": "neutral",
-      "matched_keywords": []
-    },
-    {
       "symbol": "SNDL",
       "title": "Should SNDL Stock Be in Your Portfolio Post Q1 Earnings?",
       "url": "https://finance.yahoo.com/markets/stocks/articles/sndl-stock-portfolio-post-q1-123800896.html",
@@ -599,6 +581,15 @@
     },
     {
       "symbol": "ACB",
+      "title": "Should SNDL Stock Be in Your Portfolio Post Q1 Earnings?",
+      "url": "https://finance.yahoo.com/markets/stocks/articles/sndl-stock-portfolio-post-q1-123800896.html",
+      "source": "Zacks",
+      "published": "2026-05-06T12:38:00Z",
+      "sentiment": "neutral",
+      "matched_keywords": []
+    },
+    {
+      "symbol": "SNDL",
       "title": "Weekly Roundup on the Cannabis Sector & Psychedelic Sector",
       "url": "https://finance.yahoo.com/sectors/healthcare/articles/weekly-roundup-cannabis-sector-psychedelic-151124959.html",
       "source": "Market Exclusive",
@@ -607,7 +598,7 @@
       "matched_keywords": []
     },
     {
-      "symbol": "SNDL",
+      "symbol": "ACB",
       "title": "Weekly Roundup on the Cannabis Sector & Psychedelic Sector",
       "url": "https://finance.yahoo.com/sectors/healthcare/articles/weekly-roundup-cannabis-sector-psychedelic-151124959.html",
       "source": "Market Exclusive",
@@ -617,10 +608,19 @@
     },
     {
       "symbol": "OPK",
-      "title": "OPKO Health Expands Nicoya Agreement to Support RAYALDEE Commercialization in Greater China",
-      "url": "/news/349341/opko-health-expands-nicoya-agreement-to-support-rayaldee-commercialization-in-greater-china",
-      "source": "Finviz",
-      "published": "2026-04-30T08:30:00Z",
+      "title": "OPKO Health Q1 Earnings In-Line on Product Gains, Revenues Down Y/Y",
+      "url": "https://finance.yahoo.com/sectors/healthcare/articles/opko-health-q1-earnings-line-165800116.html",
+      "source": "Zacks",
+      "published": "2026-04-29T16:58:00Z",
+      "sentiment": "neutral",
+      "matched_keywords": []
+    },
+    {
+      "symbol": "OPK",
+      "title": "OPKO Health Inc (OPK) Q1 2026 Earnings Call Highlights: Navigating Challenges and Seizing ...",
+      "url": "https://finance.yahoo.com/sectors/healthcare/articles/opko-health-inc-opk-q1-070936969.html",
+      "source": "GuruFocus.com",
+      "published": "2026-04-29T07:09:36Z",
       "sentiment": "neutral",
       "matched_keywords": []
     },
