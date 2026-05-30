@@ -1,5 +1,5 @@
 {
-  "updated": "2026-05-29T22:52:10.044743+00:00",
+  "updated": "2026-05-30T00:12:45.644583+00:00",
   "count": 75,
   "items": [
     {
@@ -132,28 +132,10 @@
     },
     {
       "symbol": "BB",
-      "title": "New QNX Research Finds Software is the Biggest Bottleneck to Robotics Innovation as Physical AI Accelerates",
-      "url": "/news/357280/new-qnx-research-finds-software-is-the-biggest-bottleneck-to-robotics-innovation-as-physical-ai-accelerates",
-      "source": "Finviz",
-      "published": "2026-05-27T08:00:00Z",
-      "sentiment": "neutral",
-      "matched_keywords": []
-    },
-    {
-      "symbol": "HIVE",
-      "title": "RETRANSMISSION: HIVE Digital Technologies to Release Fiscal Q4 and Full Year 2026 Financial Results and Hold Earnings Call on June 2nd",
-      "url": "https://www.newsfilecorp.com/release/299019/RETRANSMISSION-HIVE-Digital-Technologies-to-Release-Fiscal-Q4-and-Full-Year-2026-Financial-Results-and-Hold-Earnings-Call-on-June-2nd",
-      "source": "Finviz",
-      "published": "2026-05-27T06:00:00Z",
-      "sentiment": "neutral",
-      "matched_keywords": []
-    },
-    {
-      "symbol": "HIVE",
-      "title": "HIVE Digital Technologies to Release Fiscal Q4 and Full Year 2026 Financial Results and Hold Earnings Call on June 2nd",
-      "url": "https://www.newsfilecorp.com/release/299018/HIVE-Digital-Technologies-to-Release-Fiscal-Q4-and-Full-Year-2026-Financial-Results-and-Hold-Earnings-Call-on-June-2nd",
-      "source": "Finviz",
-      "published": "2026-05-27T01:00:00Z",
+      "title": "NOK, MU, BB Stocks Hit 52-Week Highs Today: What's Fueling The Rally?",
+      "url": "https://stocktwits.com/news-articles/markets/equity/nok-mu-bb-stocks-hit-52-week-highs-today-what-is-fueling-the-rally/cZgXwdPReA5",
+      "source": "Stocktwits",
+      "published": "2026-05-27T03:13:10Z",
       "sentiment": "neutral",
       "matched_keywords": []
     },
@@ -186,15 +168,6 @@
     },
     {
       "symbol": "AMC",
-      "title": "AMC Theatres and ODEON Cinemas Welcome More Than 5 Million Moviegoers Globally Over Memorial Day Weekend - AMC Records Its Best Thursday-Through-Monday U.S. Attendance in 2026",
-      "url": "https://www.businesswire.com/news/home/20260525513141/en",
-      "source": "Finviz",
-      "published": "2026-05-26T08:00:00Z",
-      "sentiment": "neutral",
-      "matched_keywords": []
-    },
-    {
-      "symbol": "AMC",
       "title": "Disney\u2019s \u2018Mandalorian and Grogu\u2019 Conquers Memorial Day Weekend Box Office",
       "url": "https://www.barrons.com/articles/disney-mandalorian-grogu-star-wars-box-office-7dac1411?siteid=yhoof2&yptr=yahoo",
       "source": "Barrons.com",
@@ -219,6 +192,17 @@
       "published": "2026-05-25T12:10:44Z",
       "sentiment": "neutral",
       "matched_keywords": []
+    },
+    {
+      "symbol": "AMC",
+      "title": "CEO Insider Buying And Menu Expansion Shape AMC Investment Story",
+      "url": "https://finance.yahoo.com/markets/stocks/articles/ceo-insider-buying-menu-expansion-211450336.html",
+      "source": "Simply Wall St.",
+      "published": "2026-05-24T21:14:50Z",
+      "sentiment": "bullish",
+      "matched_keywords": [
+        "insider buying"
+      ]
     },
     {
       "symbol": "PLUG",
@@ -284,7 +268,7 @@
       "matched_keywords": []
     },
     {
-      "symbol": "ACB",
+      "symbol": "SNDL",
       "title": "Should You Buy CGC Stock After Marijuana Reclassification?",
       "url": "https://finance.yahoo.com/markets/stocks/articles/buy-cgc-stock-marijuana-reclassification-121900234.html",
       "source": "Zacks",
@@ -293,7 +277,7 @@
       "matched_keywords": []
     },
     {
-      "symbol": "SNDL",
+      "symbol": "ACB",
       "title": "Should You Buy CGC Stock After Marijuana Reclassification?",
       "url": "https://finance.yahoo.com/markets/stocks/articles/buy-cgc-stock-marijuana-reclassification-121900234.html",
       "source": "Zacks",
@@ -316,6 +300,24 @@
       "url": "https://finance.yahoo.com/markets/stocks/articles/heres-why-retain-opk-stock-162300386.html",
       "source": "Zacks",
       "published": "2026-05-21T16:23:00Z",
+      "sentiment": "neutral",
+      "matched_keywords": []
+    },
+    {
+      "symbol": "HIVE",
+      "title": "Bitcoin Miner Stocks Rise After Nvidia\u2019s Blockbuster Earnings",
+      "url": "https://www.cryptoprowl.com/releases/bitcoin-miner-stocks-rise-after-nvidias-blockbuster-earnings-5570",
+      "source": "CryptoProwl",
+      "published": "2026-05-21T13:17:00Z",
+      "sentiment": "neutral",
+      "matched_keywords": []
+    },
+    {
+      "symbol": "HIVE",
+      "title": "HIVE Digital Technologies (TSX:HIVE) Is Up 38.5% After Unveiling C$3.5B AI Gigafactory Near Toronto",
+      "url": "https://finance.yahoo.com/markets/stocks/articles/hive-digital-technologies-tsx-hive-131540015.html",
+      "source": "Simply Wall St.",
+      "published": "2026-05-21T13:15:40Z",
       "sentiment": "neutral",
       "matched_keywords": []
     },
@@ -562,7 +564,7 @@
       "matched_keywords": []
     },
     {
-      "symbol": "ACB",
+      "symbol": "SNDL",
       "title": "Should SNDL Stock Be in Your Portfolio Post Q1 Earnings?",
       "url": "https://finance.yahoo.com/markets/stocks/articles/sndl-stock-portfolio-post-q1-123800896.html",
       "source": "Zacks",
@@ -571,7 +573,7 @@
       "matched_keywords": []
     },
     {
-      "symbol": "SNDL",
+      "symbol": "ACB",
       "title": "Should SNDL Stock Be in Your Portfolio Post Q1 Earnings?",
       "url": "https://finance.yahoo.com/markets/stocks/articles/sndl-stock-portfolio-post-q1-123800896.html",
       "source": "Zacks",
@@ -589,7 +591,7 @@
       "matched_keywords": []
     },
     {
-      "symbol": "ACB",
+      "symbol": "SNDL",
       "title": "Weekly Roundup on the Cannabis Sector & Psychedelic Sector",
       "url": "https://finance.yahoo.com/sectors/healthcare/articles/weekly-roundup-cannabis-sector-psychedelic-151124959.html",
       "source": "Market Exclusive",
@@ -598,7 +600,7 @@
       "matched_keywords": []
     },
     {
-      "symbol": "SNDL",
+      "symbol": "ACB",
       "title": "Weekly Roundup on the Cannabis Sector & Psychedelic Sector",
       "url": "https://finance.yahoo.com/sectors/healthcare/articles/weekly-roundup-cannabis-sector-psychedelic-151124959.html",
       "source": "Market Exclusive",

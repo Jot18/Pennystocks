@@ -1,5 +1,5 @@
 {
-  "updated": "2026-05-29T22:52:10.044743+00:00",
+  "updated": "2026-05-30T00:12:45.644583+00:00",
   "count": 23,
   "filters": {
     "max_price": 10.0,
@@ -238,28 +238,6 @@
       ]
     },
     {
-      "symbol": "ACB",
-      "exchange": "RH",
-      "robinhood_tradable": true,
-      "price": 3.6,
-      "prev_close": 3.67,
-      "day_change_pct": -1.91,
-      "gap_pct": -1.09,
-      "volume": 790389,
-      "volume_source": "today",
-      "today_vol": 790389,
-      "avg_vol_20": 672644,
-      "rel_volume": 1.18,
-      "rsi": 61.4,
-      "atr_pct": 3.71,
-      "ma5": 3.532,
-      "ma20": 3.439,
-      "score": 15,
-      "signals": [
-        "Uptrend"
-      ]
-    },
-    {
       "symbol": "SNDL",
       "exchange": "RH",
       "robinhood_tradable": true,
@@ -276,6 +254,28 @@
       "atr_pct": 3.93,
       "ma5": 1.462,
       "ma20": 1.4358,
+      "score": 15,
+      "signals": [
+        "Uptrend"
+      ]
+    },
+    {
+      "symbol": "ACB",
+      "exchange": "RH",
+      "robinhood_tradable": true,
+      "price": 3.6,
+      "prev_close": 3.67,
+      "day_change_pct": -1.91,
+      "gap_pct": -1.09,
+      "volume": 790389,
+      "volume_source": "today",
+      "today_vol": 790389,
+      "avg_vol_20": 672644,
+      "rel_volume": 1.18,
+      "rsi": 61.4,
+      "atr_pct": 3.71,
+      "ma5": 3.532,
+      "ma20": 3.439,
       "score": 15,
       "signals": [
         "Uptrend"
